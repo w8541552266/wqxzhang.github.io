@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="author" content="John Doe">
+    
+    
+    
+    
+    
+    
+    <title>Oracle延迟——大致全区测速 | Hexo</title>
+    <link href="http://example.com" rel="prefetch" />
+
+    
+<link rel="stylesheet" href="/css/bootstrap.min.css">
+<link rel="stylesheet" href="/css/aos.css">
+<link rel="stylesheet" href="/css/style.css">
+
+    
+<script src="/js/jquery.min.js"></script>
+
+    
+<script src="/js/bootstrap.min.js"></script>
+
+    
+<script src="/js/aos.js"></script>
+
+    
+<script src="/js/highslide/highslide-full.min.js"></script>
+
+    
+<link rel="stylesheet" href="/js/highslide/highslide.css">
+
+    <style type="text/css">
+        @media (max-width: 768px) {
+            body {
+                background-color: #f0f0f0;
+                background: url('/imgs/xsbg.gif');
+                background-attachment: fixed;
+            }
+        }
+    </style>
+    
+    <!--<script type="text/javascript">
+      if (document.images) {
+        var avatar = new Image();
+        avatar.src = '/imgs/avatar.jpg'
+        var previews = 'preview1.jpg,preview2.jpg,preview3.jpg,preview4.jpg'.split(',')
+        var previewsPreLoad = []
+        for(var i = 0; i < length; i++) {
+          previewsPreLoad.push(new Image())
+          previewsPreLoad[previewsPreLoad.length - 1].src = '/imgs/preview' + previews[i]
+        }
+      }
+    </script>-->
+<meta name="generator" content="Hexo 7.3.0"></head>
+<body>
+    <!-- 背景轮播图功能 -->
+    <section class="hidden-xs">
+    <ul class="cb-slideshow">
+        <li><span>天若</span></li>
+        <li><span>有情</span></li>
+        <li><span>天亦老</span></li>
+        <li><span>我为</span></li>
+        <li><span>长者</span></li>
+        <li><span>续一秒</span></li>
+    </ul>
+</section>
+    <!-- 欧尼酱功能, 谁用谁知道 -->
+    
+    <header class="navbar navbar-inverse" id="gal-header">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed"
+                    data-toggle="collapse" data-target=".bs-navbar-collapse"
+                    aria-expanded="false">
+                <span class="fa fa-lg fa-reorder"></span>
+            </button>
+            <a href="http://example.com">
+                
+                <style>
+                    #gal-header .navbar-brand {
+                        height: 54px;
+                        line-height: 24px;
+                        font-size: 28px;
+                        opacity: 1;
+                        background-color: rgba(0,0,0,0);
+                        text-shadow: 0 0 5px #fff,0 0 10px #fff,0 0 15px #fff,0 0 20px #228DFF,0 0 35px #228DFF,0 0 40px #228DFF,0 0 50px #228DFF,0 0 75px #228DFF;
+                    }
+                </style>
+                <!-- 这里使用文字(navbar_text or config.title) -->
+                <div class="navbar-brand">Hexo</div>
+                
+            </a>
+        </div>
+        <div class="collapse navbar-collapse bs-navbar-collapse">
+            <ul class="nav navbar-nav" id="menu-gal">
+                
+                
+                <li class="">
+                    <a href="/">
+                        <i class="fa fa-home"></i>首页
+                    </a>
+                </li>
+                
+                
+                
+                <li class="">
+                    <a href="/archives">
+                        <i class="fa fa-archive"></i>归档
+                    </a>
+                </li>
+                
+                
+            </ul>
+        </div>
+    </div>
+</header>
+    <div id="gal-body">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 gal-right" id="mainstay">
+                    
+<article class="article well article-body" id="article">
+    <div class="breadcrumb">
+        <i class="fa fa-home"></i>
+        <a href="http://example.com">Hexo</a>
+        >
+        <span>Oracle延迟——大致全区测速</span>
+    </div>
+    <!-- 大型设备详细文章 -->
+    <div class="hidden-xs">
+        <div class="title-article">
+            <h1>
+                <a href="/2024/09/10/2/">Oracle延迟——大致全区测速</a>
+            </h1>
+        </div>
+        <div class="tag-article">
+            
+            <span class="label label-gal">
+                <i class="fa fa-calendar"></i> 2024-09-10
+            </span>
+            
+        </div>
+    </div>
+    <!-- 小型设备详细文章 -->
+    <div class="visible-xs">
+        <center>
+            <div class="title-article">
+                <h4>
+                    <a href="/2024/09/10/2/">Oracle延迟——大致全区测速</a>
+                </h4>
+            </div>
+            <p>
+                <i class="fa fa-calendar"></i> 2024-09-10
+            </p>
+            <p>
+                
+                
+            </p>
+        </center>
+    </div>
+    <div class="content-article">
+        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>众所周知，Oracle不同区域之间的差异天差地别，不只是价格，优质线路也各不相同。很多小白玩家想下手Oracle，但是苦于对Oracle不甚了解，所以很容易被坑，买到延迟极高的区，造成很不友好的体验，今天给大家提供一个基本的测甲骨文全区基本延迟的方法</p>
+<h2 id="2024年最新甲骨文全数据中心的延迟测试IP地址"><a href="#2024年最新甲骨文全数据中心的延迟测试IP地址" class="headerlink" title="2024年最新甲骨文全数据中心的延迟测试IP地址"></a>2024年最新甲骨文全数据中心的延迟测试IP地址</h2><ol>
+<li>亚太地区</li>
+</ol>
+<p>日本东部 东京：<br><a target="_blank" rel="noopener" href="http://objectstorage.ap-tokyo-1.oraclecloud.com/">objectstorage.ap-tokyo-1.oraclecloud.com</a></p>
+<p>日本中部 大阪：<br><a target="_blank" rel="noopener" href="http://objectstorage.ap-osaka-1.oraclecloud.com/">objectstorage.ap-osaka-1.oraclecloud.com</a></p>
+<p>韩国中部 首尔：<br><a target="_blank" rel="noopener" href="http://objectstorage.ap-seoul-1.oraclecloud.com/">objectstorage.ap-seoul-1.oraclecloud.com</a></p>
+<p>韩国北部 春川：<br><a target="_blank" rel="noopener" href="http://objectstorage.ap-chuncheon-1.oraclecloud.com/">objectstorage.ap-chuncheon-1.oraclecloud.com</a></p>
+<p>新加坡<br><a target="_blank" rel="noopener" href="http://objectstorage.ap-singapore-1.oraclecloud.com/">objectstorage.ap-singapore-1.oraclecloud.com</a> （老区）<br><a target="_blank" rel="noopener" href="http://objectstorage.ap-singapore-2.oraclecloud.com/">objectstorage.ap-singapore-2.oraclecloud.com</a> （西部）</p>
+<p>澳大利亚东部 悉尼：<br><a target="_blank" rel="noopener" href="http://objectstorage.ap-sydney-1.oraclecloud.com/">objectstorage.ap-sydney-1.oraclecloud.com</a></p>
+<p>澳大利亚东南部 墨尔本：<br><a target="_blank" rel="noopener" href="http://objectstorage.ap-melbourne-1.oraclecloud.com/">objectstorage.ap-melbourne-1.oraclecloud.com</a></p>
+<p>印度西部 孟买：<br><a target="_blank" rel="noopener" href="http://objectstorage.ap-mumbai-1.oraclecloud.com/">objectstorage.ap-mumbai-1.oraclecloud.com</a></p>
+<p>印度南部 海得拉巴：<br><a target="_blank" rel="noopener" href="http://objectstorage.ap-hyderabad-1.oraclecloud.com/">objectstorage.ap-hyderabad-1.oraclecloud.com</a></p>
+<p>以色列中部 耶路撒冷：<br><a target="_blank" rel="noopener" href="http://objectstorage.il-jerusalem-1.oraclecloud.com/">objectstorage.il-jerusalem-1.oraclecloud.com</a></p>
+<ol>
+<li>北美地区</li>
+</ol>
+<p>美国东部 阿什本：<br><a target="_blank" rel="noopener" href="http://objectstorage.us-ashburn-1.oraclecloud.com/">objectstorage.us-ashburn-1.oraclecloud.com</a></p>
+<p>美国西部 凤凰城：<br><a target="_blank" rel="noopener" href="http://objectstorage.us-phoenix-1.oraclecloud.com/">objectstorage.us-phoenix-1.oraclecloud.com</a></p>
+<p>美国西部 圣何塞：<br><a target="_blank" rel="noopener" href="http://objectstorage.us-sanjose-1.oraclecloud.com/">objectstorage.us-sanjose-1.oraclecloud.com</a></p>
+<p>加拿大东南部 蒙特利尔：<br><a target="_blank" rel="noopener" href="http://objectstorage.ca-montreal-1.oraclecloud.com/">objectstorage.ca-montreal-1.oraclecloud.com</a></p>
+<p>加拿大东南部 多伦多：<br><a target="_blank" rel="noopener" href="http://objectstorage.ca-toronto-1.oraclecloud.com/">objectstorage.ca-toronto-1.oraclecloud.com</a></p>
+<p>墨西哥中部 克雷塔罗：<br><a target="_blank" rel="noopener" href="http://objectstorage.mx-queretaro-1.oraclecloud.com/">objectstorage.mx-queretaro-1.oraclecloud.com</a></p>
+<p>墨西哥东北部 蒙特雷：<br><a target="_blank" rel="noopener" href="http://objectstorage.mx-monterrey-1.oraclecloud.com/">objectstorage.mx-monterrey-1.oraclecloud.com</a></p>
+<ol>
+<li>欧洲地区：</li>
+</ol>
+<p>英国南部 伦敦：<br><a target="_blank" rel="noopener" href="http://objectstorage.uk-london-1.oraclecloud.com/">objectstorage.uk-london-1.oraclecloud.com</a></p>
+<p>英国西部 纽波特：<br><a target="_blank" rel="noopener" href="http://objectstorage.uk-cardiff-1.oraclecloud.com/">objectstorage.uk-cardiff-1.oraclecloud.com</a></p>
+<p>德国中部 法兰克福：<br><a target="_blank" rel="noopener" href="http://objectstorage.eu-frankfurt-1.oraclecloud.com/">objectstorage.eu-frankfurt-1.oraclecloud.com</a></p>
+<p>瑞士北部 苏黎世：<br><a target="_blank" rel="noopener" href="http://objectstorage.eu-zurich-1.oraclecloud.com/">objectstorage.eu-zurich-1.oraclecloud.com</a></p>
+<p>瑞典中部 斯德哥尔摩：<br><a target="_blank" rel="noopener" href="http://objectstorage.eu-stockholm-1.oraclecloud.com/">objectstorage.eu-stockholm-1.oraclecloud.com</a></p>
+<p>荷兰西北部 阿姆斯特丹：<br><a target="_blank" rel="noopener" href="http://objectstorage.eu-amsterdam-1.oraclecloud.com/">objectstorage.eu-amsterdam-1.oraclecloud.com</a></p>
+<p>法国中部 巴黎：<br><a target="_blank" rel="noopener" href="http://objectstorage.eu-paris-1.oraclecloud.com/">objectstorage.eu-paris-1.oraclecloud.com</a></p>
+<p>法国南部 马赛：<br><a target="_blank" rel="noopener" href="http://objectstorage.eu-marseille-1.oraclecloud.com/">objectstorage.eu-marseille-1.oraclecloud.com</a></p>
+<p>西班牙中部 马德里：<br><a target="_blank" rel="noopener" href="http://objectstorage.eu-madrid-1.oraclecloud.com/">objectstorage.eu-madrid-1.oraclecloud.com</a></p>
+<p>意大利西北部 米兰<br><a target="_blank" rel="noopener" href="http://objectstorage.eu-milan-1.oraclecloud.com/">objectstorage.eu-milan-1.oraclecloud.com</a></p>
+<ol>
+<li>中东地区</li>
+</ol>
+<p>阿联酋东部 迪拜：<br><a target="_blank" rel="noopener" href="http://objectstorage.me-dubai-1.oraclecloud.com/">objectstorage.me-dubai-1.oraclecloud.com</a></p>
+<p>阿联酋中部 阿布扎比<br><a target="_blank" rel="noopener" href="http://objectstorage.me-abudhabi-1.oraclecloud.com/">objectstorage.me-abudhabi-1.oraclecloud.com</a></p>
+<p>沙特阿拉伯西部 吉达：<br><a target="_blank" rel="noopener" href="http://objectstorage.me-jeddah-1.oraclecloud.com/">objectstorage.me-jeddah-1.oraclecloud.com</a></p>
+<ol>
+<li>南美地区</li>
+</ol>
+<p>巴西东部 圣保罗：<br><a target="_blank" rel="noopener" href="http://objectstorage.sa-saopaulo-1.oraclecloud.com/">objectstorage.sa-saopaulo-1.oraclecloud.com</a></p>
+<p>巴西南部 文郝多：<br><a target="_blank" rel="noopener" href="http://objectstorage.sa-vinhedo-1.oraclecloud.com/">objectstorage.sa-vinhedo-1.oraclecloud.com</a></p>
+<p>智利中部 圣地亚哥：<br><a target="_blank" rel="noopener" href="http://objectstorage.sa-santiago-1.oraclecloud.com/">objectstorage.sa-santiago-1.oraclecloud.com</a></p>
+<p>哥伦比亚中部 波哥大：<br><a target="_blank" rel="noopener" href="http://objectstorage.sa-bogota-1.oraclecloud.com/">objectstorage.sa-bogota-1.oraclecloud.com</a></p>
+<ol>
+<li>非洲地区</li>
+</ol>
+<p>南非中部 约翰内斯堡：<br><a target="_blank" rel="noopener" href="http://objectstorage.af-johannesburg-1.oraclecloud.com/">objectstorage.af-johannesburg-1.oraclecloud.com</a></p>
+<h2 id="测试延迟"><a href="#测试延迟" class="headerlink" title="测试延迟"></a>测试延迟</h2><p>进入<a target="_blank" rel="noopener" href="https://www.itdog.cn/">ITdog</a>然后在ipv4系列中测试以上域名，即可测试该区域大致对应的三网延迟</p>
+<img src="https://img.321331.xyz/20240910002735 png"/>
+
+<h2 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h2><p>由于延迟是动态变化的，一个区域的好坏最好是<strong>晚高峰时期测试</strong>，这个时期才能真正体现一个区域的真实抗压能力</p>
+
+    </div>
+</article>
+
+
+                </div>
+                <aside class="col-md-4 gal-left" id="sidebar">
+    <!-- 此为sidebar的搜索框, 非搜索结果页面 -->
+<aside id="sidebar-search">
+    <div class="search hidden-xs" data-aos="fade-up" data-aos-duration="2000">
+        <form class="form-inline clearfix" id="search-form" method="get"
+              action="/search/index.html">
+            <input type="text" name="s" class="form-control" id="searchInput" placeholder="搜索文章~" autocomplete="off">
+            <button class="btn btn-danger btn-gal" type="submit">
+                <i class="fa fa-search"></i>
+            </button>
+        </form>
+    </div>
+</aside>
+    <aside id="sidebar-author">
+    <div class="panel panel-gal" data-aos="flip-right" data-aos-duration="3000">
+        <div class="panel-heading" style="text-align: center">
+            <i class="fa fa-quote-left"></i>
+            John Doe
+            <i class="fa fa-quote-right"></i>
+        </div>
+        <div class="author-panel text-center">
+            <img src="/imgs/avatar.jpg" width="140" height="140"
+                 alt="个人头像" class="author-image">
+            <p class="author-description"></p>
+        </div>
+    </div>
+</aside>
+    
+    <!-- 要配置好leancloud才能开启此小工具 -->
+    
+    
+    <aside id="sidebar-recent_posts">
+    <div class="panel panel-gal recent hidden-xs" data-aos="fade-up" data-aos-duration="2000">
+        <div class="panel-heading">
+            <i class="fa fa-refresh"></i>
+            近期文章
+            <i class="fa fa-times-circle panel-remove"></i>
+            <i class="fa fa-chevron-circle-up panel-toggle"></i>
+        </div>
+        <ul class="list-group list-group-flush">
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2024/09/10/3/">Oracle救砖——AMD单机Netboot</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2024/09/10/2/">Oracle延迟——大致全区测速</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2024/09/09/1/">Oracle保号</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2024/09/09/hello-world/">Hello World</a>
+                </span>
+            </li>
+            
+        </ul>
+    </div>
+</aside>
+    
+    
+    <aside id="sidebar-rand_posts">
+    <div class="panel panel-gal recent hidden-xs" data-aos="fade-up" data-aos-duration="2000">
+        <div class="panel-heading">
+            <i class="fa fa-refresh"></i>
+            随机文章
+            <i class="fa fa-times-circle panel-remove"></i>
+            <i class="fa fa-chevron-circle-up panel-toggle"></i>
+        </div>
+        <ul class="list-group list-group-flush">
+            
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2024/09/09/1/">Oracle保号</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2024/09/10/2/">Oracle延迟——大致全区测速</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2024/09/09/hello-world/">Hello World</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2024/09/10/3/">Oracle救砖——AMD单机Netboot</a>
+                </span>
+            </li>
+            
+        </ul>
+    </div>
+</aside>
+    
+    
+    <aside id="gal-sets">
+        <div class="panel panel-gal hidden-xs" data-aos="fade-up" data-aos-duration="2000">
+            <ul class="nav nav-pills pills-gal">
+
+                
+                <li>
+                    <a href="/2024/09/10/2/index.html#sidebar-tags" data-toggle="tab" id="tags-tab">热门标签</a>
+                </li>
+                
+                
+                
+            </ul>
+            <div class="tab-content">
+                
+                <div class="cloud-tags tab-pane nav bs-sidenav fade" id="sidebar-tags">
+    
+</div>
+                
+                
+                
+            </div>
+        </div>
+    </aside>
+    
+</aside>
+            </div>
+        </div>
+    </div>
+    <footer id="gal-footer">
+    <div class="container">
+        Copyright © 2018 John Doe Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>.&nbsp;Theme by <a href="https://github.com/ZEROKISEKI" target="_blank">AONOSORA</a>
+    </div>
+</footer>
+
+<!-- 回到顶端 -->
+<div id="gal-gotop">
+    <i class="fa fa-angle-up"></i>
+</div>
+</body>
+
+<script src="/js/activate-power-mode.js"></script>
+
+<script>
+
+    // 配置highslide
+	hs.graphicsDir = '/js/highslide/graphics/'
+    hs.outlineType = "rounded-white";
+    hs.dimmingOpacity = 0.8;
+    hs.outlineWhileAnimating = true;
+    hs.showCredits = false;
+    hs.captionEval = "this.thumb.alt";
+    hs.numberPosition = "caption";
+    hs.align = "center";
+    hs.transitions = ["expand", "crossfade"];
+    hs.lang.number = '共%2张图, 当前是第%1张';
+    hs.addSlideshow({
+      interval: 5000,
+      repeat: true,
+      useControls: true,
+      fixedControls: "fit",
+      overlayOptions: {
+        opacity: 0.75,
+        position: "bottom center",
+        hideOnMouseOut: true
+      }
+    })
+
+    // 初始化aos
+    AOS.init({
+      duration: 1000,
+      delay: 0,
+      easing: 'ease-out-back'
+    });
+
+</script>
+<script>
+	POWERMODE.colorful = 'true';    // make power mode colorful
+	POWERMODE.shake = 'true';       // turn off shake
+	// TODO 这里根据具体情况修改
+	document.body.addEventListener('input', POWERMODE);
+</script>
+<script>
+    window.slideConfig = {
+      prefix: '/imgs/slide/background',
+      ext: 'jpg',
+      maxCount: '6'
+    }
+</script>
+
+<script src="/js/hs.js"></script>
+<script src="/js/blog.js"></script>
+
+
+
+
+</html>
