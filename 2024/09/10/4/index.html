@@ -10,7 +10,7 @@
     
     
     
-    <title>archive_a | 祥云的博客</title>
+    <title>Oracle添加第二网卡 | 祥云的博客</title>
     <link href="https://hexo.br.free.hr" rel="prefetch" />
 
     
@@ -107,7 +107,7 @@
                 
                 
                 
-                <li class="current">
+                <li class="">
                     <a href="/archives">
                         <i class="fa fa-archive"></i>归档
                     </a>
@@ -122,19 +122,27 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-8 gal-right" id="mainstay">
-                    <article class="article well article-body" id="article-archive">
+                    
+<article class="article well article-body" id="article">
     <div class="breadcrumb">
         <i class="fa fa-home"></i>
         <a href="https://hexo.br.free.hr">祥云的博客</a>
         >
-        <span>归档</span>
+        <span>Oracle添加第二网卡</span>
     </div>
     <!-- 大型设备详细文章 -->
     <div class="hidden-xs">
         <div class="title-article">
             <h1>
-                <a href="/archives">归档</a>
+                <a href="/2024/09/10/4/">Oracle添加第二网卡</a>
             </h1>
+        </div>
+        <div class="tag-article">
+            
+            <span class="label label-gal">
+                <i class="fa fa-calendar"></i> 2024-09-10
+            </span>
+            
         </div>
     </div>
     <!-- 小型设备详细文章 -->
@@ -142,47 +150,49 @@
         <center>
             <div class="title-article">
                 <h4>
-                    <a href="/archives">归档</a>
+                    <a href="/2024/09/10/4/">Oracle添加第二网卡</a>
                 </h4>
             </div>
+            <p>
+                <i class="fa fa-calendar"></i> 2024-09-10
+            </p>
+            <p>
+                
+                
+            </p>
         </center>
     </div>
-    <div class="content-article" style="margin-top: 30px;">
-        
-        
-            <h1 style="font-size: 24px; margin-top: 40px;">2024年</h1>
-            
-        <div class="alert alert-info" style="font-size: 14px; line-height: 2; font-weight: bold;">
-            
-             
-             
-                        <a href="/2024/09/10/5/">Oracle救砖——Arm篇</a>
-                        <br>
-            
-             
-                        <a href="/2024/09/10/4/">Oracle添加第二网卡</a>
-                        <br>
-            
-             
-                        <a href="/2024/09/10/3/">Oracle救砖——AMD单机Netboot</a>
-                        <br>
-            
-             
-                        <a href="/2024/09/10/2/">Oracle延迟——大致全区测速</a>
-                        <br>
-            
-             
-                        <a href="/2024/09/09/1/">Oracle保号</a>
-                        <br>
-            
-             
-                        <a href="/2024/09/09/hello-world/">Hello World</a>
-                        <br>
-            
-                    </div>
-        
+    <div class="content-article">
+        <h2 id="准备"><a href="#准备" class="headerlink" title="准备"></a>准备</h2><p>配置网卡脚本，添加IP脚本<br><code>secondary_vnic_all_configure.sh</code></p>
+<h2 id="开始"><a href="#开始" class="headerlink" title="开始"></a>开始</h2><p>使用<code>VNC</code>向导，一切默认即可</p>
+<p><img src="https://im.svideo.site/file/3753fd1187b372ff209f3.png" alt="img"></p>
+<p><img src="https://im.svideo.site/file/2896efa0350d6064ae69f.png" alt="img"></p>
+<p><img src="https://im.svideo.site/file/20c29baceaed71d904659.png" alt="img"></p>
+<p>创建完成点进去，把专用ip的先删除了（不删也行）</p>
+<p><img src="https://www.739888.xyz/wp-content/uploads/2024/09/c06effe7b833a3e9441a4-2-1024x294.png" alt="img"></p>
+<h2 id="附加VNC"><a href="#附加VNC" class="headerlink" title="附加VNC"></a>附加VNC</h2><p>点击创建<code>VNC</code>选中刚创建的<code>VNC</code>子网，选择<code>跳过源目的地检查</code></p>
+<p><img src="https://im.svideo.site/file/938da68090dbb7c4cf0cb.png" alt="img"></p>
+<h2 id="创建VNC"><a href="#创建VNC" class="headerlink" title="创建VNC"></a>创建VNC</h2><p><img src="https://im.svideo.site/file/938da68090dbb7c4cf0cb.png" alt="img"></p>
+<h2 id="添加IP"><a href="#添加IP" class="headerlink" title="添加IP"></a>添加IP</h2><p>打开<code>Cloud Shell</code></p>
+<p><img src="https://im.svideo.site/file/d129e498bc03a29df9e4d.png" alt="img"></p>
+<p>输入</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">wget https://docs.oracle.com/en-us/iaas/Content/Resources/Assets/secondary_vnic_all_configure.sh</span><br><span class="line">chmod +x secondary_vnic_all_configure.sh</span><br><span class="line">./secondary_vnic_all_configure.sh -c</span><br><span class="line">ip addr show</span><br></pre></td></tr></table></figure>
+
+<p>看到有俩网卡名称则表明添加成功</p>
+<p><img src="https://im.svideo.site/file/0228934c5383ea32ec5a8.png" alt="img"></p>
+<p>设计成服务，开启启动</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo cp /tmp/secondary_vnic_all_configure.sh /usr/local/sbin</span><br><span class="line">sudo nano /etc/systemd/system/secondary_vnic.service</span><br></pre></td></tr></table></figure>
+
+<p>内容</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">[Unit]</span><br><span class="line">Description=Setting the secondary vnic</span><br><span class="line">After=default.target</span><br><span class="line">[Service]</span><br><span class="line">Type=oneshot</span><br><span class="line">RemainAfterExit=yes</span><br><span class="line">ExecStart=/usr/local/sbin/secondary_vnic_all_configure.sh -c</span><br><span class="line">[Install]</span><br><span class="line">WantedBy=multi-user.target</span><br></pre></td></tr></table></figure>
+
+<p>设置开机自启动</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo systemctl enable secondary_vnic.service</span><br><span class="line">sudo reboot</span><br></pre></td></tr></table></figure>
+
     </div>
 </article>
+
+
                 </div>
                 <aside class="col-md-4 gal-left" id="sidebar">
     <!-- 此为sidebar的搜索框, 非搜索结果页面 -->
@@ -324,7 +334,7 @@
 
                 
                 <li>
-                    <a href="/archives/index.html#sidebar-tags" data-toggle="tab" id="tags-tab">热门标签</a>
+                    <a href="/2024/09/10/4/index.html#sidebar-tags" data-toggle="tab" id="tags-tab">热门标签</a>
                 </li>
                 
                 

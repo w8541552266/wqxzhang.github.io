@@ -10,7 +10,7 @@
     
     
     
-    <title>archive_a | 祥云的博客</title>
+    <title>Oracle救砖——Arm篇 | 祥云的博客</title>
     <link href="https://hexo.br.free.hr" rel="prefetch" />
 
     
@@ -107,7 +107,7 @@
                 
                 
                 
-                <li class="current">
+                <li class="">
                     <a href="/archives">
                         <i class="fa fa-archive"></i>归档
                     </a>
@@ -122,19 +122,27 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-8 gal-right" id="mainstay">
-                    <article class="article well article-body" id="article-archive">
+                    
+<article class="article well article-body" id="article">
     <div class="breadcrumb">
         <i class="fa fa-home"></i>
         <a href="https://hexo.br.free.hr">祥云的博客</a>
         >
-        <span>归档</span>
+        <span>Oracle救砖——Arm篇</span>
     </div>
     <!-- 大型设备详细文章 -->
     <div class="hidden-xs">
         <div class="title-article">
             <h1>
-                <a href="/archives">归档</a>
+                <a href="/2024/09/10/5/">Oracle救砖——Arm篇</a>
             </h1>
+        </div>
+        <div class="tag-article">
+            
+            <span class="label label-gal">
+                <i class="fa fa-calendar"></i> 2024-09-10
+            </span>
+            
         </div>
     </div>
     <!-- 小型设备详细文章 -->
@@ -142,47 +150,48 @@
         <center>
             <div class="title-article">
                 <h4>
-                    <a href="/archives">归档</a>
+                    <a href="/2024/09/10/5/">Oracle救砖——Arm篇</a>
                 </h4>
             </div>
+            <p>
+                <i class="fa fa-calendar"></i> 2024-09-10
+            </p>
+            <p>
+                
+                
+            </p>
         </center>
     </div>
-    <div class="content-article" style="margin-top: 30px;">
-        
-        
-            <h1 style="font-size: 24px; margin-top: 40px;">2024年</h1>
-            
-        <div class="alert alert-info" style="font-size: 14px; line-height: 2; font-weight: bold;">
-            
-             
-             
-                        <a href="/2024/09/10/5/">Oracle救砖——Arm篇</a>
-                        <br>
-            
-             
-                        <a href="/2024/09/10/4/">Oracle添加第二网卡</a>
-                        <br>
-            
-             
-                        <a href="/2024/09/10/3/">Oracle救砖——AMD单机Netboot</a>
-                        <br>
-            
-             
-                        <a href="/2024/09/10/2/">Oracle延迟——大致全区测速</a>
-                        <br>
-            
-             
-                        <a href="/2024/09/09/1/">Oracle保号</a>
-                        <br>
-            
-             
-                        <a href="/2024/09/09/hello-world/">Hello World</a>
-                        <br>
-            
-                    </div>
-        
+    <div class="content-article">
+        <h2 id="准备"><a href="#准备" class="headerlink" title="准备"></a>准备</h2><p>打开坏死的机器，在左侧的选项栏中找到<code>控制台连接</code>，然后点击<code>启动Cloud Shell连接</code></p>
+<p><img src="https://im.svideo.site/file/a79e4c76d2a26ac91a7e8.png" alt="img"></p>
+<p>然后等待Shell终端加载完毕后，点击<code>重新引导实例（勾选强制重新引导）</code>并在Cloud Shell变化后狂按键盘左上角的<code>Esc键</code>进入BIOS界面</p>
+<p><img src="https://im.svideo.site/file/71267f6e75c66499c2230.png" alt="img"></p>
+<p>然后选择<code>Boot Manager</code>接着选择<code>EFI Internal Shell</code>，然后输入<code>FS0:</code>进入到FS0中，紧接着下载 netboot.xyz 镜像包 (多节点分流)</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">日本</span><br><span class="line">tftp 168.138.192.98 arm.efi</span><br><span class="line"></span><br><span class="line">韩国</span><br><span class="line">tftp 132.145.92.56 arm.efi</span><br><span class="line">tftp 20.41.84.86 arm.efi</span><br><span class="line"></span><br><span class="line">凤凰城</span><br><span class="line">tftp 129.146.9.206 arm.efi</span><br><span class="line"></span><br><span class="line">圣保罗</span><br><span class="line">tftp 144.22.210.7 arm.efi</span><br></pre></td></tr></table></figure>
+
+<p>如果出现<code>Timeout</code>（超时）则需要到甲骨文<code>虚拟云网络</code>——<code>安全列表</code>放行UDP请求</p>
+<h2 id="引导镜像"><a href="#引导镜像" class="headerlink" title="引导镜像"></a>引导镜像</h2><p>下载好netboot镜像包后重复上述步骤进入BIOS界面</p>
+<p><img src="https://im.svideo.site/file/71267f6e75c66499c2230.png" alt="img"></p>
+<p>然后选择<code>Boot Maintenance Manager</code>然后选择<code>Boot from file</code>，默认是选中硬盘的，直接回车即可，选择对应的镜像文件然后回车，最后成功进入netboot.xyz</p>
+<p><img src="https://im.svideo.site/file/f554c3c6dd04a33aceea9.gif" alt="img"></p>
+<p>在<code>netboot.xyz</code>中选择系统进行安装，推荐<code>Debian</code>系统</p>
+<p><img src="https://im.svideo.site/file/6728a20bfec9acaad43d1.png" alt="img"></p>
+<p><img src="https://im.svideo.site/file/cc91841c3229a5e4975d1.gif" alt="img"></p>
+<p>推荐设置系统信息时所有的密码都设置一样的，方便root登录。当系统重装完成后，再次<code>强制重新启动（勾选上强制执行）</code>然后通过<code>Cloud Shell</code>登录</p>
+<p>账号是root，密码是你刚才设置的</p>
+<h2 id="重装系统"><a href="#重装系统" class="headerlink" title="重装系统"></a>重装系统</h2><p>然后安装科技lion的一键综合脚本</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl -sS -O https://raw.githubusercontent.com/kejilion/sh/main/kejilion.sh &amp;&amp; chmod +x kejilion.sh &amp;&amp; ./kejilion.sh</span><br></pre></td></tr></table></figure>
+
+<p>然后选择<code>13</code>，然后选择<code>8</code>接着输入<code>y</code>选择想要的系统编号后，再按回车即可重启</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">账号：root</span><br><span class="line">密码：LeitboGi0ro</span><br><span class="line">端口：22</span><br></pre></td></tr></table></figure>
+
+<p>输入passwd重设ssh的root密码，完成救赎！</p>
+
     </div>
 </article>
+
+
                 </div>
                 <aside class="col-md-4 gal-left" id="sidebar">
     <!-- 此为sidebar的搜索框, 非搜索结果页面 -->
@@ -324,7 +333,7 @@
 
                 
                 <li>
-                    <a href="/archives/index.html#sidebar-tags" data-toggle="tab" id="tags-tab">热门标签</a>
+                    <a href="/2024/09/10/5/index.html#sidebar-tags" data-toggle="tab" id="tags-tab">热门标签</a>
                 </li>
                 
                 
