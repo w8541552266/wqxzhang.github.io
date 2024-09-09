@@ -10,7 +10,7 @@
     
     
     
-    <title>archive_a | 祥云的博客</title>
+    <title>甲骨文拯救删除引导卷的机器或缩小硬盘 | 祥云的博客</title>
     <link href="https://hexo.br.free.hr" rel="prefetch" />
 
     
@@ -107,7 +107,7 @@
                 
                 
                 
-                <li class="current">
+                <li class="">
                     <a href="/archives">
                         <i class="fa fa-archive"></i>归档
                     </a>
@@ -122,19 +122,27 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-8 gal-right" id="mainstay">
-                    <article class="article well article-body" id="article-archive">
+                    
+<article class="article well article-body" id="article">
     <div class="breadcrumb">
         <i class="fa fa-home"></i>
         <a href="https://hexo.br.free.hr">祥云的博客</a>
         >
-        <span>归档</span>
+        <span>甲骨文拯救删除引导卷的机器或缩小硬盘</span>
     </div>
     <!-- 大型设备详细文章 -->
     <div class="hidden-xs">
         <div class="title-article">
             <h1>
-                <a href="/archives">归档</a>
+                <a href="/2024/09/10/8/">甲骨文拯救删除引导卷的机器或缩小硬盘</a>
             </h1>
+        </div>
+        <div class="tag-article">
+            
+            <span class="label label-gal">
+                <i class="fa fa-calendar"></i> 2024-09-10
+            </span>
+            
         </div>
     </div>
     <!-- 小型设备详细文章 -->
@@ -142,59 +150,39 @@
         <center>
             <div class="title-article">
                 <h4>
-                    <a href="/archives">归档</a>
+                    <a href="/2024/09/10/8/">甲骨文拯救删除引导卷的机器或缩小硬盘</a>
                 </h4>
             </div>
+            <p>
+                <i class="fa fa-calendar"></i> 2024-09-10
+            </p>
+            <p>
+                
+                
+            </p>
         </center>
     </div>
-    <div class="content-article" style="margin-top: 30px;">
-        
-        
-            <h1 style="font-size: 24px; margin-top: 40px;">2024年</h1>
-            
-        <div class="alert alert-info" style="font-size: 14px; line-height: 2; font-weight: bold;">
-            
-             
-             
-                        <a href="/2024/09/10/8/">甲骨文拯救删除引导卷的机器或缩小硬盘</a>
-                        <br>
-            
-             
-                        <a href="/2024/09/10/7/">甲骨文利用 DD 命令全盘对拷救砖</a>
-                        <br>
-            
-             
-                        <a href="/2024/09/10/6/">Linux基础操作</a>
-                        <br>
-            
-             
-                        <a href="/2024/09/10/5/">Oracle救砖——Arm篇</a>
-                        <br>
-            
-             
-                        <a href="/2024/09/10/4/">Oracle添加第二网卡</a>
-                        <br>
-            
-             
-                        <a href="/2024/09/10/3/">Oracle救砖——AMD单机Netboot</a>
-                        <br>
-            
-             
-                        <a href="/2024/09/10/2/">Oracle延迟——大致全区测速</a>
-                        <br>
-            
-             
-                        <a href="/2024/09/09/1/">Oracle保号</a>
-                        <br>
-            
-             
-                        <a href="/2024/09/09/hello-world/">Hello World</a>
-                        <br>
-            
-                    </div>
-        
+    <div class="content-article">
+        <h2 id="准备"><a href="#准备" class="headerlink" title="准备"></a>准备</h2><p>1.一个正常的引导卷<br>2.一个删了引导卷的实例或需要缩小硬盘的实例</p>
+<h2 id="开始"><a href="#开始" class="headerlink" title="开始"></a>开始</h2><p>打开 <strong>Cloud Shell</strong><br><img src="https://3dm.pw/upload/2024/09/image-1725372879673.png" alt="image-1725372879673"><br><img src="https://3dm.pw/upload/2024/09/image-1725372973452.png" alt="image-1725372973452"><br>输入<code> oci iam compartment list --all</code>获取<code>compartment-id</code><br>结果范例如下：</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">  <span class="attr">&quot;data&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">    <span class="punctuation">&#123;</span></span><br><span class="line">      <span class="attr">&quot;compartment-id&quot;</span><span class="punctuation">:</span> <span class="string">&quot;ocid1.tenancy.oc1..aaaaaaaa4k5yv5xtbhx&quot;</span><span class="punctuation">,</span></span><br><span class="line">      <span class="attr">&quot;defined-tags&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span><span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">      <span class="attr">&quot;description&quot;</span><span class="punctuation">:</span> <span class="string">&quot;idcs-911029629e1b47&quot;</span><span class="punctuation">,</span></span><br><span class="line">      <span class="attr">&quot;freeform-tags&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span><span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">      <span class="attr">&quot;id&quot;</span><span class="punctuation">:</span> <span class="string">&quot;ocid1.compartment.oc1..aaaaaaaa22eq7x&quot;</span><span class="punctuation">,</span></span><br><span class="line">      <span class="attr">&quot;inactive-status&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">null</span></span><span class="punctuation">,</span></span><br><span class="line">      <span class="attr">&quot;is-accessible&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">null</span></span><span class="punctuation">,</span></span><br><span class="line">      <span class="attr">&quot;lifecycle-state&quot;</span><span class="punctuation">:</span> <span class="string">&quot;ACTIVE&quot;</span><span class="punctuation">,</span></span><br><span class="line">      <span class="attr">&quot;name&quot;</span><span class="punctuation">:</span> <span class="string">&quot;ManagedCompartmentForPaaS&quot;</span><span class="punctuation">,</span></span><br><span class="line">      <span class="attr">&quot;time-created&quot;</span><span class="punctuation">:</span> <span class="string">&quot;2024-01-19T05:57:19.196000+00:00&quot;</span></span><br><span class="line">    <span class="punctuation">&#125;</span></span><br><span class="line">  <span class="punctuation">]</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+
+<p>接着输入<code>oci -i</code> 进入oci命令提示模式<br><img src="https://3dm.pw/upload/2024/09/image-1725373301563.png" alt="image-1725373301563"></p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">oci bv boot-volume create <span class="attr">--availability-domain</span> <span class="selector-attr">[打一个空格会提示]</span> <span class="attr">--compartment-id</span> <span class="selector-attr">[输入上面获取的compartment-id]</span> <span class="attr">--size-in-gbs</span> <span class="selector-attr">[硬盘大小]</span> <span class="attr">--source-boot-volume-id</span> <span class="selector-attr">[正常的引导卷ocid]</span> <span class="attr">--display-name</span> <span class="selector-attr">[引导卷名称]</span></span><br></pre></td></tr></table></figure>
+
+<p>获取引导卷ocid<br><img src="https://3dm.pw/upload/2024/09/image-1725373667591.png" alt="image-1725373667591"><br><img src="https://3dm.pw/upload/2024/09/image-1725373709266.png" alt="image-1725373709266"><br>停止实例，分离现有的引导卷</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">oci compute boot-volume-attachment detach <span class="attr">--boot-volume-attachment-id</span> <span class="selector-attr">[现有引导卷的ocid]</span>  </span><br></pre></td></tr></table></figure>
+
+<p><img src="https://3dm.pw/upload/2024/09/image-1725373961340.png" alt="image-1725373961340"><br><img src="https://3dm.pw/upload/2024/09/image-1725373709266.png" alt="image-1725373709266"><br>附加新引导卷</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">oci compute boot-volume-attachment attach <span class="attr">--boot-volume-id</span> <span class="selector-attr">[打一个空格有提示，选择新建的那个引导卷]</span>  <span class="attr">--instance-id</span> <span class="selector-attr">[打空格提示选需要附加的实例]</span>                                  </span><br></pre></td></tr></table></figure>
+
+<p>启动实例</p>
+<h2 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h2><p>如果使用amd的引导卷来拯救，还需要新附加的引导卷进行重装系统。建议使用netboot重装，如嫌麻烦可使用一次替换引导卷(建议先停止实例)</p>
+
     </div>
 </article>
+
+
                 </div>
                 <aside class="col-md-4 gal-left" id="sidebar">
     <!-- 此为sidebar的搜索框, 非搜索结果页面 -->
@@ -372,7 +360,7 @@
 
                 
                 <li>
-                    <a href="/archives/2024/09/index.html#sidebar-tags" data-toggle="tab" id="tags-tab">热门标签</a>
+                    <a href="/2024/09/10/8/index.html#sidebar-tags" data-toggle="tab" id="tags-tab">热门标签</a>
                 </li>
                 
                 

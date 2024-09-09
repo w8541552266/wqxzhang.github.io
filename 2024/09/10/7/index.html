@@ -10,7 +10,7 @@
     
     
     
-    <title>archive_a | 祥云的博客</title>
+    <title>甲骨文利用 DD 命令全盘对拷救砖 | 祥云的博客</title>
     <link href="https://hexo.br.free.hr" rel="prefetch" />
 
     
@@ -107,7 +107,7 @@
                 
                 
                 
-                <li class="current">
+                <li class="">
                     <a href="/archives">
                         <i class="fa fa-archive"></i>归档
                     </a>
@@ -122,19 +122,27 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-8 gal-right" id="mainstay">
-                    <article class="article well article-body" id="article-archive">
+                    
+<article class="article well article-body" id="article">
     <div class="breadcrumb">
         <i class="fa fa-home"></i>
         <a href="https://hexo.br.free.hr">祥云的博客</a>
         >
-        <span>归档</span>
+        <span>甲骨文利用 DD 命令全盘对拷救砖</span>
     </div>
     <!-- 大型设备详细文章 -->
     <div class="hidden-xs">
         <div class="title-article">
             <h1>
-                <a href="/archives">归档</a>
+                <a href="/2024/09/10/7/">甲骨文利用 DD 命令全盘对拷救砖</a>
             </h1>
+        </div>
+        <div class="tag-article">
+            
+            <span class="label label-gal">
+                <i class="fa fa-calendar"></i> 2024-09-10
+            </span>
+            
         </div>
     </div>
     <!-- 小型设备详细文章 -->
@@ -142,59 +150,38 @@
         <center>
             <div class="title-article">
                 <h4>
-                    <a href="/archives">归档</a>
+                    <a href="/2024/09/10/7/">甲骨文利用 DD 命令全盘对拷救砖</a>
                 </h4>
             </div>
+            <p>
+                <i class="fa fa-calendar"></i> 2024-09-10
+            </p>
+            <p>
+                
+                
+            </p>
         </center>
     </div>
-    <div class="content-article" style="margin-top: 30px;">
-        
-        
-            <h1 style="font-size: 24px; margin-top: 40px;">2024年</h1>
-            
-        <div class="alert alert-info" style="font-size: 14px; line-height: 2; font-weight: bold;">
-            
-             
-             
-                        <a href="/2024/09/10/8/">甲骨文拯救删除引导卷的机器或缩小硬盘</a>
-                        <br>
-            
-             
-                        <a href="/2024/09/10/7/">甲骨文利用 DD 命令全盘对拷救砖</a>
-                        <br>
-            
-             
-                        <a href="/2024/09/10/6/">Linux基础操作</a>
-                        <br>
-            
-             
-                        <a href="/2024/09/10/5/">Oracle救砖——Arm篇</a>
-                        <br>
-            
-             
-                        <a href="/2024/09/10/4/">Oracle添加第二网卡</a>
-                        <br>
-            
-             
-                        <a href="/2024/09/10/3/">Oracle救砖——AMD单机Netboot</a>
-                        <br>
-            
-             
-                        <a href="/2024/09/10/2/">Oracle延迟——大致全区测速</a>
-                        <br>
-            
-             
-                        <a href="/2024/09/09/1/">Oracle保号</a>
-                        <br>
-            
-             
-                        <a href="/2024/09/09/hello-world/">Hello World</a>
-                        <br>
-            
-                    </div>
-        
+    <div class="content-article">
+        <h1 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h1><p>此方法不适用于需要拯救500m的老amd</p>
+<h1 id="准备"><a href="#准备" class="headerlink" title="准备"></a>准备</h1><p>首先我们 AMD 机器一般都是 2 台，我们会选用一台为宿主机，利用它来给另一台机器写盘<br><img src="https://3dm.pw/upload/2024/03/1.png" alt="1"><br>这里我们假设第一台为砖机，那么我们用第二台好机器来救机<br>将坏机器关机<br><strong>注意：<br>这里的关机指的是停止，不是终止！</strong><br><img src="https://3dm.pw/upload/2024/03/3.png" alt="3"><br>坏机器分离引导卷<br>来到左侧菜单栏 选择引导卷 并分离当前引导卷<br><img src="https://3dm.pw/upload/2024/03/4.png" alt="4"></p>
+<h2 id="挂载引导卷"><a href="#挂载引导卷" class="headerlink" title="挂载引导卷"></a>挂载引导卷</h2><p>进入好机器 在左侧找到（附加块引导卷）并附加<br><img src="https://3dm.pw/upload/2024/03/5-1711845037483.png" alt="5-1711845037483"><br>创建 ISCSI 类型权限给它可读写<br><img src="https://3dm.pw/upload/2024/03/2024-03-31-08-22-44.gif" alt="2024-03-31-08-22-44"></p>
+<p>附加成功之后查看 ISCSI 相关命令，用于挂载与卸载（不用记，随时可以查看）<br><img src="https://3dm.pw/upload/2024/03/7.png" alt="7"><br><img src="https://3dm.pw/upload/2024/03/8.png" alt="8"></p>
+<p>登录正常的好机器的 SSH 执行挂载 (挂载完成后需重启服务器）<br><img src="https://3dm.pw/upload/2024/03/9.png" alt="9"></p>
+<p>查询挂载情况<br><code>fdisk -l</code><br>挂载正常的话，你会看到 sda 和 sdb 两块硬盘 后者为你刚挂载的硬盘<br><img src="https://3dm.pw/upload/2024/03/10.png" alt="10"></p>
+<h2 id="写入系统"><a href="#写入系统" class="headerlink" title="写入系统"></a>写入系统</h2><p>给 sdb 写入系统 成功后按需 DD 其他系统</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">wget <span class="string">&quot;https://cloud.debian.org/images/cloud/bullseye/latest/debian-11-nocloud-amd64.tar.xz&quot;</span> -O - | xz -d | tar -xv </span><br><span class="line"></span><br><span class="line"><span class="built_in">dd</span> <span class="keyword">if</span>=./disk.raw of=/dev/sdb bs=1M</span><br></pre></td></tr></table></figure>
+
+<p>如果提示没有xz或tar</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apt install -y xz tar</span><br></pre></td></tr></table></figure>
+
+<h2 id="分离引导卷"><a href="#分离引导卷" class="headerlink" title="分离引导卷"></a>分离引导卷</h2><p>DD 完成之后，分别在 SSH 和网页分离引导卷 (分前后)<br><img src="https://3dm.pw/upload/2024/03/11.png" alt="11"><br><img src="https://3dm.pw/upload/2024/03/12.png" alt="12"><br>来到关机那台 AMD 页面 选择引导卷 - 附加引导卷<br><img src="https://3dm.pw/upload/2024/03/13.png" alt="13"><br>附加完成后，直接启动 点击cloud shell<br><img src="https://3dm.pw/upload/2024/03/image.png" alt="image"><br><img src="https://3dm.pw/upload/2024/03/image-1711845752957.png" alt="image-1711845752957"><br>回车输入 用户名root 密码为空<br>设置root登录</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">apt update</span><br><span class="line">apt purge -y openssh-server</span><br><span class="line">apt install  -y openssh-server</span><br><span class="line">echo root:你的密码 | chpasswd root</span><br><span class="line">sed -i &#x27;s/^#\?PermitRootLogin.*/PermitRootLogin yes/g&#x27; /etc/ssh/sshd_config</span><br><span class="line">sed -i &#x27;s/^#\?PasswordAuthentication.*/PasswordAuthentication yes/g&#x27; /etc/ssh/sshd_config</span><br><span class="line">rm -rf /etc/ssh/sshd_config.d/* &amp;&amp; rm -rf /etc/ssh/ssh_config.d/*</span><br><span class="line">/etc/init.d/ssh* restart</span><br></pre></td></tr></table></figure>
+
     </div>
 </article>
+
+
                 </div>
                 <aside class="col-md-4 gal-left" id="sidebar">
     <!-- 此为sidebar的搜索框, 非搜索结果页面 -->
@@ -372,7 +359,7 @@
 
                 
                 <li>
-                    <a href="/archives/2024/09/index.html#sidebar-tags" data-toggle="tab" id="tags-tab">热门标签</a>
+                    <a href="/2024/09/10/7/index.html#sidebar-tags" data-toggle="tab" id="tags-tab">热门标签</a>
                 </li>
                 
                 
