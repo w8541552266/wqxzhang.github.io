@@ -10,7 +10,7 @@
     
     
     
-    <title>Oracle保号 | 祥云的博客</title>
+    <title>archive_a | 祥云的博客</title>
     <link href="https://hexo.br.free.hr" rel="prefetch" />
 
     
@@ -107,7 +107,7 @@
                 
                 
                 
-                <li class="">
+                <li class="current">
                     <a href="/archives">
                         <i class="fa fa-archive"></i>归档
                     </a>
@@ -122,27 +122,19 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-8 gal-right" id="mainstay">
-                    
-<article class="article well article-body" id="article">
+                    <article class="article well article-body" id="article-archive">
     <div class="breadcrumb">
         <i class="fa fa-home"></i>
         <a href="https://hexo.br.free.hr">祥云的博客</a>
         >
-        <span>Oracle保号</span>
+        <span>归档</span>
     </div>
     <!-- 大型设备详细文章 -->
     <div class="hidden-xs">
         <div class="title-article">
             <h1>
-                <a href="/2024/09/09/1/">Oracle保号</a>
+                <a href="/archives">归档</a>
             </h1>
-        </div>
-        <div class="tag-article">
-            
-            <span class="label label-gal">
-                <i class="fa fa-calendar"></i> 2024-09-09
-            </span>
-            
         </div>
     </div>
     <!-- 小型设备详细文章 -->
@@ -150,120 +142,71 @@
         <center>
             <div class="title-article">
                 <h4>
-                    <a href="/2024/09/09/1/">Oracle保号</a>
+                    <a href="/archives">归档</a>
                 </h4>
             </div>
-            <p>
-                <i class="fa fa-calendar"></i> 2024-09-09
-            </p>
-            <p>
-                
-                
-            </p>
         </center>
     </div>
-    <div class="content-article">
-        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>总所周知，Oracle的高配Arm很难开，开到了如果使用不当会被收回，以下是Oracle官方的回收政策</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">如果在 7 天内满足以下全部条件，Oracle 将认为虚拟机和裸机计算实例处于空闲状态，会回收实例。</span><br><span class="line"></span><br><span class="line">CPU 利用率低于10%</span><br><span class="line">网络利用率低于10%</span><br><span class="line">内存利用率低于10%（仅适用于Arm）</span><br></pre></td></tr></table></figure>
-
-<p>如果七天内满足其中任意一条，则不会回收实例，只有<strong>全部满足</strong>以上三点才会回收实例</p>
-<h2 id="六大保号思路"><a href="#六大保号思路" class="headerlink" title="六大保号思路"></a>六大保号思路</h2><ul>
-<li>取消甲骨文官方自带的监控<ul>
-<li>root模式下执行<code>snap remove oracle-cloud-agent</code>即可删除<code>oracle-cloud-agent</code></li>
-</ul>
-</li>
-<li>满足cpu占用<ul>
-<li>占用CPU：<br><code>cd /root &amp;&amp; wget -qO OneKeyFuck_OCPU.sh https://raw.githubusercontent.com/Mrmineduce21/Oracle_OneKey_Active/main/OneKeyFuck_OCPU.sh &amp;&amp; chmod +x OneKeyFuck_OCPU.sh &amp;&amp; bash OneKeyFuck_OCPU.sh</code></li>
-<li>卸载：<br><code>pid=$(ps -ef | grep &quot;bash&quot; | grep &#39;/bin/bash&#39; | grep -v grep | awk &#39;&#123;print $2&#125;&#39;) &amp;&amp; kill -9 $pid</code></li>
-</ul>
-</li>
-<li>满足内存占用<ul>
-<li>安装科技lion的一键脚本：<br><code>curl -sS -O https://raw.githubusercontent.com/kejilion/sh/main/kejilion.sh &amp;&amp; chmod +x kejilion.sh &amp;&amp; ./kejilion.sh</code><br>然后输入<strong>9</strong>进入后输入<strong>1</strong>安装活跃脚本即可</li>
-<li>卸载：输入<strong>k</strong>运行科技lion一键脚本，输入<strong>9</strong>进入后输入<strong>2</strong>卸载活跃脚本即可</li>
-</ul>
-</li>
-<li>满足网络占用<ul>
-<li>进行无人直播</li>
-</ul>
-</li>
-<li>体现服务器重要性<ul>
-<li>搭建博客</li>
-<li>搭建Alist</li>
-<li>搭建其他服务</li>
-</ul>
-</li>
-<li>禁止行为<ul>
-<li>挖矿</li>
-<li>安装刷机脚本，比如刷Arm的脚本，如R探长、oci-help等（用其他机器刷，不要使用甲骨文的机器来刷）</li>
-<li>ddos攻击行为</li>
-<li>其他违规或非法行为</li>
-</ul>
-</li>
-</ul>
-<h3 id="进行无人直播（YouTube为例）"><a href="#进行无人直播（YouTube为例）" class="headerlink" title="进行无人直播（YouTube为例）"></a>进行无人直播（YouTube为例）</h3><ul>
-<li>更新系统并安装相应的组件<br><code>apt update -y &amp;&amp; apt upgrade -y &amp;&amp; apt install -y curl wget sudo socat htop ffmpeg iftop</code></li>
-<li>创建文件夹</li>
-</ul>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mkdir /youtube</span><br><span class="line">cd /youtube</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>执行直播命令，开始无人直播<br><code>nohup ffmpeg -stream_loop -1 -re -i /youtube/文件名 -c copy -f flv rtmp://a.rtmp.youtube.com/live2/直播码 &gt; /dev/null 2&gt;&amp;1 &amp;</code><ul>
-<li>注意：①文件名是指你上传至<code>/youtube</code>里的视频名，需要带上拓展名，比如<code>.mp4</code>；②直接替换<strong>文件名</strong>和<strong>直播码</strong>即可，要注意不要删去了空格</li>
-</ul>
-</li>
-<li>查看进程：ps -ef | grep ffmpeg</li>
-<li>杀死进程：kill -9 ID号</li>
-</ul>
-<h3 id="无人直播守护进程"><a href="#无人直播守护进程" class="headerlink" title="无人直播守护进程"></a>无人直播守护进程</h3><ul>
-<li>前言：由于无人直播很容易因服务器网络波动而中断，比如晚高峰。所以需要守护进程来保证无人直播被中断后继续执行</li>
-<li>安装守护进程：<code>supervisor：sudo apt install supervisor</code></li>
-<li>赋予超管权限：</li>
-</ul>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd /etc/init.d/</span><br><span class="line">sudo chmod +x /etc/init.d/supervisor</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>管理无人进程：</li>
-</ul>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo service supervisor start                #启动</span><br><span class="line">sudo service supervisor stop                   #停止</span><br><span class="line">sudo service supervisor status                   #查看状态</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>编写配置文件：<code>vim /etc/supervisor/conf.d/youtubelive.conf</code></li>
-<li>配置文件内容：</li>
-</ul>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">[program:youtubelive]</span><br><span class="line">command=ffmpeg -stream_loop -1 -re -i /youtube/文件名 -c copy -f flv rtmp://a.rtmp.youtube.com/live2/直播码</span><br><span class="line">autostart=true</span><br><span class="line">autorestart=true</span><br><span class="line">startretries=3    </span><br><span class="line">stderr_logfile=/var/log/ffmpeg.err.log</span><br><span class="line">stdout_logfile=/var/log/ffmpeg.out.log</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>加载配置文件：</li>
-</ul>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo supervisorctl reread</span><br><span class="line">sudo supervisorctl update</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>启动文件：</li>
-</ul>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">supervisorctl start youtubelive</span><br><span class="line">supervisorctl stop youtubelive</span><br><span class="line">supervisorctl status youtubelive</span><br><span class="line">supervisorctl restart youtubelive</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>查看直播状态：ps -ef | grep ffmpeg</li>
-<li>杀死进程：kill -9 ID号</li>
-<li>注意：由于YouTube会自动杀死满一个月的直播，所以有时候会出现服务器还显示直播在运行并且刷流量，但是YouTube不显示直播了。如果是只想刷流量保号的话可以不用管，如果想保留YouTube的直播只需要关闭守护进程再启动即可<code>supervisorctl start youtubelive &amp;&amp; supervisorctl stop youtubelive</code>，或者直接重启即可<code>supervisorctl restart youtubelive</code></li>
-</ul>
-<h3 id="部署博客网站"><a href="#部署博客网站" class="headerlink" title="部署博客网站"></a>部署博客网站</h3><ul>
-<li>建议先安装<a target="_blank" rel="noopener" href="https://1panel.cn/docs/installation/online_installation/">1panel</a>（点击即可跳转至官方下载页）</li>
-<li>安装好OpenResty后，安装MySQL并部署（不要打开外网访问，这样更安全），再部署PHP8环境（拓展要保证有mysqli），然后安装Halo博客或者Wordpress博客</li>
-<li>安装好后，绑定Cloudflare并解析好ip，<strong>开启</strong>Cloudflare<strong>小黄云</strong>（即开启CDN防止源站ip泄露被DDOS），接着转到SSL&#x2F;TLS的<strong>概述</strong>将加密模式改为<strong>完全严格</strong>并且切换至<strong>源服务器</strong>添加免费的15年证书，将私钥和公钥复制粘贴至<strong>1panel面板</strong>的<strong>网站——证书——上传证书</strong>即可为网站添加证书，然后新建网站用解析了的域名，然后点击网站域名进入<strong>网站设置</strong>，然后切换到<strong>HTTPS</strong>后点击<strong>启用</strong>，HTTP选项选择<strong>访问HTTP自动跳转到HTTPS</strong>，SSL选项为<strong>选择已有证书</strong>，Acme账户为<strong>手动创建</strong>，证书就选择刚手动创建的证书，<strong>支持的协议版本</strong>和<strong>加密算法</strong>保持默认即可，然后点击保存</li>
-<li>完成域名访问网站<ul>
-<li>具体教程可自行寻找</li>
-</ul>
-</li>
-<li>网站内容自行设置</li>
-<li>免费图床<br><a target="_blank" rel="noopener" href="https://im.svideo.site/">Telegraph-Image</a></li>
-<li>markdown编写app<br><a target="_blank" rel="noopener" href="https://joplinapp.org/download/">Joplin</a></li>
-</ul>
-
+    <div class="content-article" style="margin-top: 30px;">
+        
+        
+            <h1 style="font-size: 24px; margin-top: 40px;">2024年</h1>
+            
+        <div class="alert alert-info" style="font-size: 14px; line-height: 2; font-weight: bold;">
+            
+             
+             
+                        <a href="/2024/09/10/11/">兰空图床2.0使用picgo上传图片教程</a>
+                        <br>
+            
+             
+                        <a href="/2024/09/10/10/">postman汉化版下载_在线post工具</a>
+                        <br>
+            
+             
+                        <a href="/2024/09/10/9/">CFnat的使用方法</a>
+                        <br>
+            
+             
+                        <a href="/2024/09/10/8/">甲骨文拯救删除引导卷的机器或缩小硬盘</a>
+                        <br>
+            
+             
+                        <a href="/2024/09/10/7/">甲骨文利用 DD 命令全盘对拷救砖</a>
+                        <br>
+            
+             
+                        <a href="/2024/09/10/6/">Linux基础操作</a>
+                        <br>
+            
+             
+                        <a href="/2024/09/10/5/">Oracle救砖——Arm篇</a>
+                        <br>
+            
+             
+                        <a href="/2024/09/10/4/">Oracle添加第二网卡</a>
+                        <br>
+            
+             
+                        <a href="/2024/09/10/3/">Oracle救砖——AMD单机Netboot</a>
+                        <br>
+            
+             
+                        <a href="/2024/09/10/2/">Oracle延迟——大致全区测速</a>
+                        <br>
+            
+             
+                        <a href="/2024/09/09/1/">Oracle保号</a>
+                        <br>
+            
+             
+                        <a href="/2024/09/09/hello-world/">Hello World</a>
+                        <br>
+            
+                    </div>
+        
     </div>
 </article>
-
-
                 </div>
                 <aside class="col-md-4 gal-left" id="sidebar">
     <!-- 此为sidebar的搜索框, 非搜索结果页面 -->
@@ -408,7 +351,7 @@
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2024/09/10/3/">Oracle救砖——AMD单机Netboot</a>
+                    <a href="/2024/09/10/4/">Oracle添加第二网卡</a>
                 </span>
             </li>
             
@@ -432,7 +375,7 @@
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2024/09/10/8/">甲骨文拯救删除引导卷的机器或缩小硬盘</a>
+                    <a href="/2024/09/10/9/">CFnat的使用方法</a>
                 </span>
             </li>
             
@@ -453,7 +396,7 @@
 
                 
                 <li>
-                    <a href="/2024/09/09/1/index.html#sidebar-tags" data-toggle="tab" id="tags-tab">热门标签</a>
+                    <a href="/archives/page/2/index.html#sidebar-tags" data-toggle="tab" id="tags-tab">热门标签</a>
                 </li>
                 
                 
