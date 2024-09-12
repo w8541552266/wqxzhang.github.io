@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="author" content="欢迎访问">
+    
+    
+    
+    
+    
+    
+    <title>VPS一键脚本合集(持更~) | 祥云的博客</title>
+    <link href="https://hexo.br.free.hr" rel="prefetch" />
+
+    
+<link rel="stylesheet" href="/css/bootstrap.min.css">
+<link rel="stylesheet" href="/css/aos.css">
+<link rel="stylesheet" href="/css/style.css">
+
+    
+<script src="/js/jquery.min.js"></script>
+
+    
+<script src="/js/bootstrap.min.js"></script>
+
+    
+<script src="/js/aos.js"></script>
+
+    
+<script src="/js/highslide/highslide-full.min.js"></script>
+
+    
+<link rel="stylesheet" href="/js/highslide/highslide.css">
+
+    <style type="text/css">
+        @media (max-width: 768px) {
+            body {
+                background-color: #f0f0f0;
+                background: url('/imgs/xsbg.gif');
+                background-attachment: fixed;
+            }
+        }
+    </style>
+    
+    <!--<script type="text/javascript">
+      if (document.images) {
+        var avatar = new Image();
+        avatar.src = '/imgs/https:/www.loliapi.com/acg/pp/'
+        var previews = 'https://www.loliapi.com/acg/,https://www.loliapi.com/acg/pc/,https://www.loliapi.com/acg/pe/,https://www.loliapi.com/bg/'.split(',')
+        var previewsPreLoad = []
+        for(var i = 0; i < length; i++) {
+          previewsPreLoad.push(new Image())
+          previewsPreLoad[previewsPreLoad.length - 1].src = '/imgs/preview' + previews[i]
+        }
+      }
+    </script>-->
+<meta name="generator" content="Hexo 7.3.0"></head>
+<body>
+    <!-- 背景轮播图功能 -->
+    <section class="hidden-xs">
+    <ul class="cb-slideshow">
+        <li><span>天若</span></li>
+        <li><span>有情</span></li>
+        <li><span>天亦老</span></li>
+        <li><span>我为</span></li>
+        <li><span>长者</span></li>
+        <li><span>续一秒</span></li>
+    </ul>
+</section>
+    <!-- 欧尼酱功能, 谁用谁知道 -->
+    
+    <header class="navbar navbar-inverse" id="gal-header">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed"
+                    data-toggle="collapse" data-target=".bs-navbar-collapse"
+                    aria-expanded="false">
+                <span class="fa fa-lg fa-reorder"></span>
+            </button>
+            <a href="https://hexo.br.free.hr">
+                
+                <style>
+                    #gal-header .navbar-brand {
+                        height: 54px;
+                        line-height: 24px;
+                        font-size: 28px;
+                        opacity: 1;
+                        background-color: rgba(0,0,0,0);
+                        text-shadow: 0 0 5px #fff,0 0 10px #fff,0 0 15px #fff,0 0 20px #228DFF,0 0 35px #228DFF,0 0 40px #228DFF,0 0 50px #228DFF,0 0 75px #228DFF;
+                    }
+                </style>
+                <!-- 这里使用文字(navbar_text or config.title) -->
+                <div class="navbar-brand">祥云的博客</div>
+                
+            </a>
+        </div>
+        <div class="collapse navbar-collapse bs-navbar-collapse">
+            <ul class="nav navbar-nav" id="menu-gal">
+                
+                
+                <li class="">
+                    <a href="/">
+                        <i class="fa fa-home"></i>首页
+                    </a>
+                </li>
+                
+                
+                
+                <li class="">
+                    <a href="/archives">
+                        <i class="fa fa-archive"></i>归档
+                    </a>
+                </li>
+                
+                
+            </ul>
+        </div>
+    </div>
+</header>
+    <div id="gal-body">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 gal-right" id="mainstay">
+                    
+<article class="article well article-body" id="article">
+    <div class="breadcrumb">
+        <i class="fa fa-home"></i>
+        <a href="https://hexo.br.free.hr">祥云的博客</a>
+        >
+        <span>VPS一键脚本合集(持更~)</span>
+    </div>
+    <!-- 大型设备详细文章 -->
+    <div class="hidden-xs">
+        <div class="title-article">
+            <h1>
+                <a href="/2024/09/12/13/">VPS一键脚本合集(持更~)</a>
+            </h1>
+        </div>
+        <div class="tag-article">
+            
+            <span class="label label-gal">
+                <i class="fa fa-calendar"></i> 2024-09-12
+            </span>
+            
+        </div>
+    </div>
+    <!-- 小型设备详细文章 -->
+    <div class="visible-xs">
+        <center>
+            <div class="title-article">
+                <h4>
+                    <a href="/2024/09/12/13/">VPS一键脚本合集(持更~)</a>
+                </h4>
+            </div>
+            <p>
+                <i class="fa fa-calendar"></i> 2024-09-12
+            </p>
+            <p>
+                
+                
+            </p>
+        </center>
+    </div>
+    <div class="content-article">
+        <p>欢迎大家来补充~</p>
+<h1 id="节点类"><a href="#节点类" class="headerlink" title="节点类"></a>节点类</h1><h3 id="一键SS"><a href="#一键SS" class="headerlink" title="一键SS"></a>一键SS</h3><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget -O [ss-rust.<span class="property">sh</span>](<span class="language-xml">&lt;http://ss-rust.sh/&gt;</span>) --no-check-certificate &lt;<span class="attr">https</span>:<span class="comment">//raw.githubusercontent.com/xOS/Shadowsocks-Rust/master/ss-rust.sh&gt; &amp;&amp; chmod +x [ss-rust.sh](&lt;http://ss-rust.sh/&gt;) &amp;&amp; ./ss-rust.sh</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="一键SNELL"><a href="#一键SNELL" class="headerlink" title="一键SNELL"></a>一键SNELL</h3><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget -O [snell.<span class="property">sh</span>](<span class="language-xml">&lt;http://snell.sh/&gt;</span>) --no-check-certificate &lt;<span class="attr">https</span>:<span class="comment">//git.io/Snell.sh&gt; &amp;&amp; chmod +x [snell.sh](&lt;http://snell.sh/&gt;) &amp;&amp; ./snell.sh</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="一键TUIC"><a href="#一键TUIC" class="headerlink" title="一键TUIC"></a>一键TUIC</h3><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget -N --no-check-certificate &lt;<span class="attr">https</span>:<span class="comment">//raw.githubusercontent.com/CCCOrz/auto-tuic/main/tuic.sh&gt; &amp;&amp; bash [tuic.sh](&lt;http://tuic.sh/&gt;)</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="一键Hy2"><a href="#一键Hy2" class="headerlink" title="一键Hy2"></a>一键Hy2</h3><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget -N --no-check-certificate &lt;<span class="attr">https</span>:<span class="comment">//raw.githubusercontent.com/Misaka-blog/hysteria-install/main/hy2/hysteria.sh&gt; &amp;&amp; bash [hysteria.sh](&lt;http://hysteria.sh/&gt;)</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="一键MTProto-TG代理"><a href="#一键MTProto-TG代理" class="headerlink" title="一键MTProto(TG代理)"></a>一键MTProto(TG代理)</h3><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apt install -y curl bash &lt;(curl -sL &lt;<span class="attr">https</span>:<span class="comment">//storage.googleapis.com/tiziblog/mt_setup.sh&gt;) (&lt;https://storage.googleapis.com/tiziblog/mt_setup.sh&gt;)</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="一键Singbox"><a href="#一键Singbox" class="headerlink" title="一键Singbox"></a>一键Singbox</h3><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget -N -O /root/singbox.<span class="property">sh</span> &lt;<span class="attr">https</span>:<span class="comment">//raw.githubusercontent.com/qiuxiuya/qiuxiuya/main/VPS/singbox.sh&gt; &amp;&amp; chmod +x /root/singbox.sh &amp;&amp; ln -sf /root/singbox.sh /usr/local/bin/singbox &amp;&amp; bash /root/singbox.sh</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="一键V2Ray-VMESS-Trojan-WS-gRPC-TCP-TLS"><a href="#一键V2Ray-VMESS-Trojan-WS-gRPC-TCP-TLS" class="headerlink" title="一键V2Ray(VMESS&#x2F;Trojan+WS&#x2F;gRPC&#x2F;TCP(+TLS)"></a>一键V2Ray(VMESS&#x2F;Trojan+WS&#x2F;gRPC&#x2F;TCP(+TLS)</h3><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">bash &lt;(wget -qO- -o- <span class="language-xml">&lt;https://git.io/v2ray.sh&gt;</span>)</span><br><span class="line">                                                                                             [<span class="title class_">GitHub</span>](<span class="language-xml">&lt;https://github.com/233boy/v2ray/tree/master&gt;</span>)</span><br></pre></td></tr></table></figure>
+
+<h2 id="x-ui系列"><a href="#x-ui系列" class="headerlink" title="x-ui系列"></a>x-ui系列</h2><h3 id="x-ui原版-停更了-适合新手"><a href="#x-ui原版-停更了-适合新手" class="headerlink" title="x-ui原版(停更了~适合新手)"></a>x-ui原版(停更了~适合新手)</h3><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">bash &lt;(curl -<span class="title class_">Ls</span> &lt;<span class="attr">https</span>:<span class="comment">//raw.githubusercontent.com/vaxilu/x-ui/master/install.sh&gt;)</span></span><br><span class="line">                                                                                                                           [<span class="title class_">GitHub</span>](<span class="language-xml">&lt;https://github.com/vaxilu/x-ui&gt;</span>)</span><br></pre></td></tr></table></figure>
+
+<h3 id="sing-web-x-ui"><a href="#sing-web-x-ui" class="headerlink" title="sing-web&#x2F;x-ui"></a>sing-web&#x2F;<strong>x-ui</strong></h3><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bash &lt;(wget -qO- <span class="language-xml">&lt;https://raw.githubusercontent.com/sing-web/**x**-**ui**/main/install_CN.sh&gt;</span>)</span><br></pre></td></tr></table></figure>
+
+<p>GitHub</p>
+<h3 id="MHSanaei-3x-ui"><a href="#MHSanaei-3x-ui" class="headerlink" title="MHSanaei&#x2F;3x-ui"></a>MHSanaei&#x2F;3x-ui</h3><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bash &lt;(curl -<span class="title class_">Ls</span> &lt;<span class="attr">https</span>:<span class="comment">//raw.githubusercontent.com/mhsanaei/3x-ui/master/install.sh&gt;)</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="工具类"><a href="#工具类" class="headerlink" title="工具类"></a>工具类</h1><h3 id="bing自签证书生成"><a href="#bing自签证书生成" class="headerlink" title="bing自签证书生成"></a>bing自签证书生成</h3><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bash &lt;(curl -sSL &lt;<span class="attr">https</span>:<span class="comment">//raw.githubusercontent.com/qiuxiuya/qiuxiuya/main/VPS/bingcrt.sh&gt;)</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="多功能工具箱"><a href="#多功能工具箱" class="headerlink" title="多功能工具箱"></a>多功能工具箱</h3><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl -sS -O &lt;<span class="attr">https</span>:<span class="comment">//raw.githubusercontent.com/kejilion/sh/main/kejilion.sh&gt; &amp;&amp; chmod +x kejilion.sh &amp;&amp; ./kejilion.sh</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="一键Gost转发"><a href="#一键Gost转发" class="headerlink" title="一键Gost转发"></a>一键Gost转发</h3><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget --no-check-certificate -O gost.<span class="property">sh</span> &lt;<span class="attr">https</span>:<span class="comment">//raw.githubusercontent.com/KANIKIG/Multi-EasyGost/master/gost.sh&gt; &amp;&amp; chmod +x gost.sh &amp;&amp; ./gost.sh</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="v4-v6优先切换"><a href="#v4-v6优先切换" class="headerlink" title="v4&#x2F;v6优先切换"></a>v4&#x2F;v6优先切换</h3><p>v4优先</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sed -i <span class="string">&#x27;s/#precedence ::ffff:0:0\\/96  100/precedence ::ffff:0:0\\/96  100/&#x27;</span> /etc/gai.<span class="property">conf</span></span><br></pre></td></tr></table></figure>
+
+<p>v6优先</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sed -i <span class="string">&#x27;s/precedence ::ffff:0:0\\/96  100/#precedence ::ffff:0:0\\/96  100/&#x27;</span> /etc/gai.<span class="property">conf</span></span><br></pre></td></tr></table></figure>
+
+<p>验证 <code>curl [ip.sb](&lt;http://ip.sb/&gt;)</code></p>
+<h3 id="一键WARP"><a href="#一键WARP" class="headerlink" title="一键WARP"></a>一键WARP</h3><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">wget -N &lt;<span class="attr">https</span>:<span class="comment">//gitlab.com/fscarmen/warp/-/raw/main/menu.sh&gt; &amp;&amp; bash [menu.sh](&lt;http://menu.sh/&gt;)</span></span><br><span class="line">                                                                                                                           [<span class="title class_">Gitlab</span>](<span class="language-xml">&lt;https://gitlab.com/fscarmen/warp&gt;</span>)</span><br></pre></td></tr></table></figure>
+
+<h3 id="免费DNS解锁"><a href="#免费DNS解锁" class="headerlink" title="免费DNS解锁"></a>免费DNS解锁</h3><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">wget -O /tmp/lyz &lt;<span class="attr">http</span>:<span class="comment">//tanainai.net/statics/bin/lyz-v0.0.3-linux-amd64&gt; &amp;&amp; chmod +x /tmp/lyz &amp;&amp; /tmp/lyz install_personal</span></span><br><span class="line">                                                                                                                              [<span class="title class_">GitHub</span>](<span class="language-xml">&lt;https://github.com/LaoYiZi-Media/unblock/wiki/%E8%80%81%E5%A7%A8%E5%AD%90%E8%A7%A3%E9%94%81&gt;)</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="一键Alist"><a href="#一键Alist" class="headerlink" title="一键Alist"></a>一键Alist</h3><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">curl -fsSL <span class="string">&quot;&lt;https://alist.nn.ci/v3.sh&gt;&quot;</span> | bash -s install</span><br><span class="line">                                                                                                                            [<span class="title class_">GitHub</span>](<span class="language-xml">&lt;https://github.com/alist-org/alist/tree/main&gt;</span>)</span><br><span class="line"></span><br><span class="line">                                                                                                                           [官方文档](<span class="language-xml">&lt;https://alist.nn.ci/zh/&gt;</span>)</span><br></pre></td></tr></table></figure>
+
+<h3 id="一键ACME申请证书"><a href="#一键ACME申请证书" class="headerlink" title="一键ACME申请证书"></a>一键ACME申请证书</h3><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">wget -N --no-check-certificate &lt;<span class="attr">https</span>:<span class="comment">//raw.githubusercontent.com/Misaka-blog/acme-script/main/acme.sh&gt; &amp;&amp; bash [acme.sh](&lt;http://acme.sh/&gt;)</span></span><br><span class="line">                                                                                                                             [<span class="title class_">GitHub</span>](<span class="language-xml">&lt;https://github.com/Misaka-blog/acme-script&gt;</span>)</span><br></pre></td></tr></table></figure>
+
+<h3 id="一键Caddy反代"><a href="#一键Caddy反代" class="headerlink" title="一键Caddy反代"></a>一键Caddy反代</h3><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bash &lt;(curl -L -s &lt;<span class="attr">https</span>:<span class="comment">//raw.githubusercontent.com/qiuxiuya/qiuxiuya/main/VPS/caddy.sh&gt;)</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="一键xanmod-第三方BBR"><a href="#一键xanmod-第三方BBR" class="headerlink" title="一键xanmod(第三方BBR"></a>一键xanmod(第三方BBR</h3><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bash &lt;(curl -sSL &lt;<span class="attr">https</span>:<span class="comment">//raw.githubusercontent.com/qiuxiuya/qiuxiuya/main/VPS/xanmod.sh&gt;)</span></span><br></pre></td></tr></table></figure>
+
+<p>按1安装后重启,然后再次运行按2</p>
+<h3 id="magicTCP-魔改BBR"><a href="#magicTCP-魔改BBR" class="headerlink" title="magicTCP(魔改BBR)"></a>magicTCP(魔改BBR)</h3><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bash &lt;(curl -sSL &lt;<span class="attr">https</span>:<span class="comment">//raw.githubusercontent.com/nexstorm/magicTCP/main/main.sh&gt;)</span></span><br></pre></td></tr></table></figure>
+
+<p>先按1安装完会自动重启，重启好再运行一次按2</p>
+<h3 id="一键BBR"><a href="#一键BBR" class="headerlink" title="一键BBR"></a>一键BBR</h3><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd /usr/src &amp;&amp; wget -N --no-check-certificate <span class="string">&quot; (&lt;https://raw.githubusercontent.com/chiakge/Linux-NetSpeed/master/tcp.sh&gt;)&lt;https://raw.githubusercontent.com/chiakge/Linux-NetSpeed/master/tcp.sh&gt;&quot;</span> (<span class="language-xml">&lt;https://raw.githubusercontent.com/chiakge/Linux-NetSpeed/master/tcp.sh&gt;</span>) &amp;&amp; chmod +x [tcp.<span class="property">sh</span>](<span class="language-xml">&lt;http://tcp.sh/&gt;</span>) &amp;&amp; ./tcp.<span class="property">sh</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="一键甲骨文保活"><a href="#一键甲骨文保活" class="headerlink" title="一键甲骨文保活"></a>一键甲骨文保活</h3><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">curl -L &lt;<span class="attr">https</span>:<span class="comment">//gitlab.com/spiritysdx/Oracle-server-keep-alive-script/-/raw/main/oalive.sh&gt; -o [oalive.sh](&lt;http://oalive.sh/&gt;) &amp;&amp; chmod +x [oalive.sh](&lt;http://oalive.sh/&gt;) &amp;&amp; bash [oalive.sh](&lt;http://oalive.sh/&gt;)</span></span><br><span class="line">                                                                                                                          [<span class="title class_">GitHub</span>](<span class="language-xml">&lt;https://github.com/spiritLHLS/Oracle-server-keep-alive-script&gt;</span>)</span><br></pre></td></tr></table></figure>
+
+<h3 id="一键获取Root"><a href="#一键获取Root" class="headerlink" title="一键获取Root"></a>一键获取Root</h3><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget -N &lt;<span class="attr">https</span>:<span class="comment">//gitlab.com/rwkgyg/vpsroot/raw/main/root.sh&gt; &amp;&amp; bash [root.sh](&lt;http://root.sh/&gt;)</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="1Panel面板-VPS管理面板-官网"><a href="#1Panel面板-VPS管理面板-官网" class="headerlink" title="1Panel面板(VPS管理面板)[官网]"></a>1Panel面板(VPS管理面板)[<a target="_blank" rel="noopener" href="https://1panel.cn/">官网</a>]</h3><h3 id="Debian"><a href="#Debian" class="headerlink" title="Debian"></a>Debian</h3><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl -sSL &lt;<span class="attr">https</span>:<span class="comment">//resource.fit2cloud.com/1panel/package/quick_start.sh&gt; -o quick_start.sh &amp;&amp; bash quick_start.sh</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="Ubuntu"><a href="#Ubuntu" class="headerlink" title="Ubuntu"></a><strong>Ubuntu</strong></h3><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl -sSL &lt;<span class="attr">https</span>:<span class="comment">//resource.fit2cloud.com/1panel/package/quick_start.sh&gt; -o quick_start.sh &amp;&amp; sudo bash quick_start.sh</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="RedHat-CentOS"><a href="#RedHat-CentOS" class="headerlink" title="RedHat &#x2F; CentOS"></a><strong>RedHat &#x2F; CentOS</strong></h3><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl -sSL &lt;<span class="attr">https</span>:<span class="comment">//resource.fit2cloud.com/1panel/package/quick_start.sh&gt; -o quick_start.sh &amp;&amp; sh quick_start.sh</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="宝塔面板-官网"><a href="#宝塔面板-官网" class="headerlink" title="宝塔面板[官网]"></a>宝塔面板[<a target="_blank" rel="noopener" href="https://www.bt.cn/">官网</a>]</h3><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> [ -f /usr/bin/curl ];then curl -sSO &lt;<span class="attr">https</span>:<span class="comment">//download.bt.cn/install/install_panel.sh;else&gt; wget -O install_panel.sh &lt;https://download.bt.cn/install/install_panel.sh;fi;bash&gt; install_panel.sh ed8484bec</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="一键DD"><a href="#一键DD" class="headerlink" title="一键DD"></a>一键DD</h3><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget --no-check-certificate -qO <span class="title class_">InstallNET</span>.<span class="property">sh</span> <span class="string">&#x27;&lt;https://raw.githubusercontent.com/leitbogioro/Tools/master/Linux_reinstall/InstallNET.sh&gt;&#x27;</span> &amp;&amp; chmod a+x <span class="title class_">InstallNET</span>.<span class="property">sh</span> &amp;&amp; bash <span class="title class_">InstallNET</span>.<span class="property">sh</span> -debian <span class="number">11</span> -pwd 密码</span><br></pre></td></tr></table></figure>
+
+<h3 id="Sub-Store"><a href="#Sub-Store" class="headerlink" title="Sub-Store"></a>Sub-Store</h3><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl -sSL &lt;<span class="attr">https</span>:<span class="comment">//sub-store-org.github.io/resource/ssm/install.sh&gt; | bash</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="哪吒监控面板"><a href="#哪吒监控面板" class="headerlink" title="哪吒监控面板"></a>哪吒监控面板</h3><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl -L &lt;<span class="attr">https</span>:<span class="comment">//raw.githubusercontent.com/naiba/nezha/master/script/install.sh&gt; -o [nezha.sh](&lt;http://nezha.sh/&gt;) &amp;&amp; chmod +x [nezha.sh](&lt;http://nezha.sh/&gt;) &amp;&amp; sudo ./nezha.sh</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="subconverter订阅转换"><a href="#subconverter订阅转换" class="headerlink" title="subconverter订阅转换"></a>subconverter订阅转换</h3><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run -d --restart=always -p <span class="number">25500</span>:<span class="number">25500</span> tindy2013/<span class="attr">subconverter</span>:latest</span><br></pre></td></tr></table></figure>
+
+<h3 id="Nexttrace路由测试"><a href="#Nexttrace路由测试" class="headerlink" title="Nexttrace路由测试"></a>Nexttrace路由测试</h3><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bash &lt;(curl -<span class="title class_">Ls</span> &lt;<span class="attr">https</span>:<span class="comment">//raw.githubusercontent.com/sjlleo/nexttrace/main/nt_install.sh&gt;)</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="检测类"><a href="#检测类" class="headerlink" title="检测类"></a>检测类</h2><h3 id="流媒体检测-去广告版"><a href="#流媒体检测-去广告版" class="headerlink" title="流媒体检测(去广告版)"></a>流媒体检测(去广告版)</h3><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bash &lt;(curl -L -s &lt;<span class="attr">https</span>:<span class="comment">//raw.githubusercontent.com/1-stream/RegionRestrictionCheck/main/check.sh&gt;)</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="流媒体检测-带DNS解锁检测"><a href="#流媒体检测-带DNS解锁检测" class="headerlink" title="流媒体检测(带DNS解锁检测)"></a>流媒体检测(带DNS解锁检测)</h3><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bash &lt;(curl -L -s [media.<span class="property">ispvps</span>.<span class="property">com</span>](<span class="language-xml">&lt;http://media.ispvps.com/&gt;</span>))</span><br></pre></td></tr></table></figure>
+
+<h3 id="三网回程检测"><a href="#三网回程检测" class="headerlink" title="三网回程检测"></a>三网回程检测</h3><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl &lt;<span class="attr">https</span>:<span class="comment">//raw.githubusercontent.com/zhanghanyun/backtrace/main/install.sh&gt; -sSf | sh</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="三网回程速度测试"><a href="#三网回程速度测试" class="headerlink" title="三网回程速度测试"></a>三网回程速度测试</h3><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bash &lt;(curl -<span class="title class_">Lso</span>- <span class="language-xml">&lt;https://raw.githubusercontent.com/uxh/superspeed/master/superspeed.sh&gt;</span>)</span><br></pre></td></tr></table></figure>
+
+<h3 id="融合怪测试"><a href="#融合怪测试" class="headerlink" title="融合怪测试"></a>融合怪测试</h3><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl -L &lt;<span class="attr">https</span>:<span class="comment">//gitlab.com/spiritysdx/za/-/raw/main/ecs.sh&gt; -o [ecs.sh](&lt;http://ecs.sh/&gt;) &amp;&amp; chmod +x [ecs.sh](&lt;http://ecs.sh/&gt;) &amp;&amp; bash [ecs.sh](&lt;http://ecs.sh/&gt;)</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="一键封号-人形"><a href="#一键封号-人形" class="headerlink" title="一键封号(人形)"></a><em>一键封号(人形)</em></h2><h3 id="Linux版"><a href="#Linux版" class="headerlink" title="Linux版"></a>Linux版</h3><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget &lt;<span class="attr">https</span>:<span class="comment">//raw.githubusercontent.com/TeamPGM/PagerMaid-Pyro/development/utils/install.sh&gt; -O [install.sh](&lt;http://install.sh/&gt;) &amp;&amp; chmod +x [install.sh](&lt;http://install.sh/&gt;) &amp;&amp; bash [install.sh](&lt;http://install.sh/&gt;)</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="Docker版"><a href="#Docker版" class="headerlink" title="Docker版"></a>Docker版</h3><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget &lt;<span class="attr">https</span>:<span class="comment">//raw.githubusercontent.com/TeamPGM/PagerMaid-Pyro/development/utils/docker.sh&gt; -O [docker.sh](&lt;http://docker.sh/&gt;) &amp;&amp; chmod +x [docker.sh](&lt;http://docker.sh/&gt;) &amp;&amp; bash [docker.sh](&lt;http://docker.sh/&gt;)</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="Pagermaid-Pyro-一键脚本重制版-EAlyce"><a href="#Pagermaid-Pyro-一键脚本重制版-EAlyce" class="headerlink" title="Pagermaid-Pyro 一键脚本重制版@EAlyce"></a>Pagermaid-Pyro 一键脚本重制版@EAlyce</h3>
+    </div>
+</article>
+
+
+                </div>
+                <aside class="col-md-4 gal-left" id="sidebar">
+    <!-- 此为sidebar的搜索框, 非搜索结果页面 -->
+<aside id="sidebar-search">
+    <div class="search hidden-xs" data-aos="fade-up" data-aos-duration="2000">
+        <form class="form-inline clearfix" id="search-form" method="get"
+              action="/search/index.html">
+            <input type="text" name="s" class="form-control" id="searchInput" placeholder="搜索文章~" autocomplete="off">
+            <button class="btn btn-danger btn-gal" type="submit">
+                <i class="fa fa-search"></i>
+            </button>
+        </form>
+    </div>
+</aside>
+    <aside id="sidebar-author">
+    <div class="panel panel-gal" data-aos="flip-right" data-aos-duration="3000">
+        <div class="panel-heading" style="text-align: center">
+            <i class="fa fa-quote-left"></i>
+            欢迎访问
+            <i class="fa fa-quote-right"></i>
+        </div>
+        <div class="author-panel text-center">
+            <img src="https://www.loliapi.com/acg/pp/" width="140" height="140"
+                 alt="个人头像" class="author-image">
+            <p class="author-description"></p>
+        </div>
+    </div>
+</aside>
+    
+    <!-- 要配置好leancloud才能开启此小工具 -->
+    
+    
+    <aside id="sidebar-recent_posts">
+    <div class="panel panel-gal recent hidden-xs" data-aos="fade-up" data-aos-duration="2000">
+        <div class="panel-heading">
+            <i class="fa fa-refresh"></i>
+            近期文章
+            <i class="fa fa-times-circle panel-remove"></i>
+            <i class="fa fa-chevron-circle-up panel-toggle"></i>
+        </div>
+        <ul class="list-group list-group-flush">
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2024/09/12/13/">VPS一键脚本合集(持更~)</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2024/09/12/12/">PicGo配置公益ipfs图床</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2024/09/10/11/">兰空图床2.0使用picgo上传图片教程</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2024/09/10/10/">postman汉化版下载_在线post工具</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2024/09/10/9/">CFnat的使用方法</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2024/09/10/8/">甲骨文拯救删除引导卷的机器或缩小硬盘</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2024/09/10/7/">甲骨文利用 DD 命令全盘对拷救砖</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2024/09/10/6/">Linux基础操作</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2024/09/10/5/">Oracle救砖——Arm篇</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2024/09/10/4/">Oracle添加第二网卡</a>
+                </span>
+            </li>
+            
+        </ul>
+    </div>
+</aside>
+    
+    
+    <aside id="sidebar-rand_posts">
+    <div class="panel panel-gal recent hidden-xs" data-aos="fade-up" data-aos-duration="2000">
+        <div class="panel-heading">
+            <i class="fa fa-refresh"></i>
+            随机文章
+            <i class="fa fa-times-circle panel-remove"></i>
+            <i class="fa fa-chevron-circle-up panel-toggle"></i>
+        </div>
+        <ul class="list-group list-group-flush">
+            
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2024/09/10/10/">postman汉化版下载_在线post工具</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2024/09/09/1/">Oracle保号</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2024/09/12/12/">PicGo配置公益ipfs图床</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2024/09/10/2/">Oracle延迟——大致全区测速</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2024/09/10/11/">兰空图床2.0使用picgo上传图片教程</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2024/09/10/4/">Oracle添加第二网卡</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2024/09/10/5/">Oracle救砖——Arm篇</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2024/09/12/13/">VPS一键脚本合集(持更~)</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2024/09/10/8/">甲骨文拯救删除引导卷的机器或缩小硬盘</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2024/09/10/9/">CFnat的使用方法</a>
+                </span>
+            </li>
+            
+        </ul>
+    </div>
+</aside>
+    
+    
+    <aside id="gal-sets">
+        <div class="panel panel-gal hidden-xs" data-aos="fade-up" data-aos-duration="2000">
+            <ul class="nav nav-pills pills-gal">
+
+                
+                <li>
+                    <a href="/2024/09/12/13/index.html#sidebar-tags" data-toggle="tab" id="tags-tab">热门标签</a>
+                </li>
+                
+                
+                
+            </ul>
+            <div class="tab-content">
+                
+                <div class="cloud-tags tab-pane nav bs-sidenav fade" id="sidebar-tags">
+    
+</div>
+                
+                
+                
+            </div>
+        </div>
+    </aside>
+    
+</aside>
+            </div>
+        </div>
+    </div>
+    <footer id="gal-footer">
+    <div class="container">
+        Copyright © 2018 欢迎访问 Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>.&nbsp;Theme by <a href="https://github.com/ZEROKISEKI" target="_blank">AONOSORA</a>
+    </div>
+</footer>
+
+<!-- 回到顶端 -->
+<div id="gal-gotop">
+    <i class="fa fa-angle-up"></i>
+</div>
+</body>
+
+<script src="/js/activate-power-mode.js"></script>
+
+<script>
+
+    // 配置highslide
+	hs.graphicsDir = '/js/highslide/graphics/'
+    hs.outlineType = "rounded-white";
+    hs.dimmingOpacity = 0.8;
+    hs.outlineWhileAnimating = true;
+    hs.showCredits = false;
+    hs.captionEval = "this.thumb.alt";
+    hs.numberPosition = "caption";
+    hs.align = "center";
+    hs.transitions = ["expand", "crossfade"];
+    hs.lang.number = '共%2张图, 当前是第%1张';
+    hs.addSlideshow({
+      interval: 5000,
+      repeat: true,
+      useControls: true,
+      fixedControls: "fit",
+      overlayOptions: {
+        opacity: 0.75,
+        position: "bottom center",
+        hideOnMouseOut: true
+      }
+    })
+
+    // 初始化aos
+    AOS.init({
+      duration: 1000,
+      delay: 0,
+      easing: 'ease-out-back'
+    });
+
+</script>
+<script>
+	POWERMODE.colorful = 'true';    // make power mode colorful
+	POWERMODE.shake = 'true';       // turn off shake
+	// TODO 这里根据具体情况修改
+	document.body.addEventListener('input', POWERMODE);
+</script>
+<script>
+    window.slideConfig = {
+      prefix: '/imgs/slide/background',
+      ext: 'jpg',
+      maxCount: '6'
+    }
+</script>
+
+<script src="/js/hs.js"></script>
+<script src="/js/blog.js"></script>
+
+
+
+
+</html>
