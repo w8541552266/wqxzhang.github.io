@@ -10,7 +10,7 @@
     
     
     
-    <title>Oracle救砖——Arm篇 | 祥云的博客</title>
+    <title>PicGo配置公益ipfs图床 | 祥云的博客</title>
     <link href="https://hexo.br.free.hr" rel="prefetch" />
 
     
@@ -128,19 +128,19 @@
         <i class="fa fa-home"></i>
         <a href="https://hexo.br.free.hr">祥云的博客</a>
         >
-        <span>Oracle救砖——Arm篇</span>
+        <span>PicGo配置公益ipfs图床</span>
     </div>
     <!-- 大型设备详细文章 -->
     <div class="hidden-xs">
         <div class="title-article">
             <h1>
-                <a href="/2024/09/10/5/">Oracle救砖——Arm篇</a>
+                <a href="/2024/09/12/12/">PicGo配置公益ipfs图床</a>
             </h1>
         </div>
         <div class="tag-article">
             
             <span class="label label-gal">
-                <i class="fa fa-calendar"></i> 2024-09-10
+                <i class="fa fa-calendar"></i> 2024-09-12
             </span>
             
         </div>
@@ -150,11 +150,11 @@
         <center>
             <div class="title-article">
                 <h4>
-                    <a href="/2024/09/10/5/">Oracle救砖——Arm篇</a>
+                    <a href="/2024/09/12/12/">PicGo配置公益ipfs图床</a>
                 </h4>
             </div>
             <p>
-                <i class="fa fa-calendar"></i> 2024-09-10
+                <i class="fa fa-calendar"></i> 2024-09-12
             </p>
             <p>
                 
@@ -163,31 +163,21 @@
         </center>
     </div>
     <div class="content-article">
-        <h2 id="准备"><a href="#准备" class="headerlink" title="准备"></a>准备</h2><p>打开坏死的机器，在左侧的选项栏中找到<code>控制台连接</code>，然后点击<code>启动Cloud Shell连接</code></p>
-<p><img src="https://im.svideo.site/file/a79e4c76d2a26ac91a7e8.png" alt="img"></p>
-<p>然后等待Shell终端加载完毕后，点击<code>重新引导实例（勾选强制重新引导）</code>并在Cloud Shell变化后狂按键盘左上角的<code>Esc键</code>进入BIOS界面</p>
-<p><img src="https://im.svideo.site/file/71267f6e75c66499c2230.png" alt="img"></p>
-<p>然后选择<code>Boot Manager</code>接着选择<code>EFI Internal Shell</code>，然后输入<code>FS0:</code>进入到FS0中，紧接着下载 netboot.xyz 镜像包 (多节点分流)</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">日本</span><br><span class="line">tftp 168.138.192.98 arm.efi</span><br><span class="line"></span><br><span class="line">韩国</span><br><span class="line">tftp 132.145.92.56 arm.efi</span><br><span class="line">tftp 20.41.84.86 arm.efi</span><br><span class="line"></span><br><span class="line">凤凰城</span><br><span class="line">tftp 129.146.9.206 arm.efi</span><br><span class="line"></span><br><span class="line">圣保罗</span><br><span class="line">tftp 144.22.210.7 arm.efi</span><br></pre></td></tr></table></figure>
-
-<p>如果出现<code>Timeout</code>（超时）则需要到甲骨文<code>虚拟云网络</code>——<code>安全列表</code>放行UDP请求</p>
-<h2 id="引导镜像"><a href="#引导镜像" class="headerlink" title="引导镜像"></a>引导镜像</h2><p>下载好netboot镜像包后重复上述步骤进入BIOS界面</p>
-<p><img src="https://im.svideo.site/file/71267f6e75c66499c2230.png" alt="img"></p>
-<p>然后选择<code>Boot Maintenance Manager</code>然后选择<code>Boot from file</code>，默认是选中硬盘的，直接回车即可，选择对应的镜像文件然后回车，最后成功进入netboot.xyz</p>
-<p><img src="https://im.svideo.site/file/f554c3c6dd04a33aceea9.gif" alt="img"></p>
-<p>在<code>netboot.xyz</code>中选择系统进行安装，推荐<code>Debian</code>系统</p>
-<p><img src="https://im.svideo.site/file/6728a20bfec9acaad43d1.png" alt="img"></p>
-<p><img src="https://im.svideo.site/file/cc91841c3229a5e4975d1.gif" alt="img"></p>
-<p>推荐设置系统信息时所有的密码都设置一样的，方便root登录。当系统重装完成后，再次<code>强制重新启动（勾选上强制执行）</code>然后通过<code>Cloud Shell</code>登录</p>
-<p>账号是root，密码是你刚才设置的</p>
-<h2 id="重装系统"><a href="#重装系统" class="headerlink" title="重装系统"></a>重装系统</h2><p>然后安装科技lion的一键综合脚本</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl -sS -O https://raw.githubusercontent.com/kejilion/sh/main/kejilion.sh &amp;&amp; chmod +x kejilion.sh &amp;&amp; ./kejilion.sh</span><br></pre></td></tr></table></figure>
-
-<p>然后选择<code>13</code>，然后选择<code>8</code>接着输入<code>y</code>选择想要的系统编号后，再按回车即可重启</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">账号：root</span><br><span class="line">密码：LeitboGi0ro</span><br><span class="line">端口：22</span><br></pre></td></tr></table></figure>
-
-<p>输入passwd重设ssh的root密码，完成救赎！</p>
-
+        <h1 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h1><h4 id="1，需要下载PicGo，并安装PicGo"><a href="#1，需要下载PicGo，并安装PicGo" class="headerlink" title="1，需要下载PicGo，并安装PicGo"></a>1，需要下载PicGo，并安装PicGo</h4><p>下载地址：<a target="_blank" rel="noopener" href="https://github.com/Molunerfinn/PicGo/releases">github</a></p>
+<h4 id="2，安装插件"><a href="#2，安装插件" class="headerlink" title="2，安装插件"></a>2，安装插件</h4><p>1，在PicGo软件中找到 <strong>插件设置</strong></p>
+<p><img src="https://cdn.img2ipfs.com/ipfs/QmQvVW64C9bA6vEyYtj66vKJrTVVg472nohz1idNLjmVx7?filename=image-20240912125355275.png" alt="image-20240912125355275"></p>
+<p>2，在插件设置中搜索 <strong>自定义Web图床</strong> (或者搜索 <strong>web-uploader</strong>)</p>
+<p><img src="https://cdn.img2ipfs.com/ipfs/QmaMdbgsncNz4DPhdy29DNhikHCJH1SU7sMV8qpS39sMLb?filename=image-20240912125642131.png" alt="image-20240912125642131"></p>
+<p>第一个就是</p>
+<h3 id="3，配置图床-ipfs公益图床"><a href="#3，配置图床-ipfs公益图床" class="headerlink" title="3，配置图床(ipfs公益图床)"></a>3，配置图床(ipfs公益图床)</h3><p><img src="https://cdn.img2ipfs.com/ipfs/QmQXhAAfVCAgbJ9MGZwwzc44JQHJRv7mMWtx3BbdkJNHZJ?filename=image-20240912125906083.png" alt="image-20240912125906083"></p>
+<p><code>图床配置名：img2ipfs</code></p>
+<p><code>API地址：https://api.img2ipfs.org/api/v0/add</code></p>
+<p><code>POST参数名：file</code></p>
+<p><code>JSON路径：Url   (注意这里的U是大写的U)</code></p>
+<p>其它留空</p>
+<p>然后点击确定</p>
+<h3 id="上传图片测试"><a href="#上传图片测试" class="headerlink" title="上传图片测试"></a>上传图片测试</h3><p><img src="https://cdn.img2ipfs.com/ipfs/QmbuLwcBsXqcKeJbxge4hFoFh6QJ5GE2CntDXezhZmne9C?filename=image-20240912130309465.png" alt="image-20240912130309465"></p>
+<h3 id="结束！！！！"><a href="#结束！！！！" class="headerlink" title="结束！！！！"></a>结束！！！！</h3>
     </div>
 </article>
 
@@ -324,6 +314,12 @@
             
             <li class="list-group-item">
                 <span class="post-title">
+                    <a href="/2024/09/09/1/">Oracle保号</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
                     <a href="/2024/09/12/12/">PicGo配置公益ipfs图床</a>
                 </span>
             </li>
@@ -342,12 +338,6 @@
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2024/09/10/5/">Oracle救砖——Arm篇</a>
-                </span>
-            </li>
-            
-            <li class="list-group-item">
-                <span class="post-title">
                     <a href="/2024/09/10/4/">Oracle添加第二网卡</a>
                 </span>
             </li>
@@ -360,7 +350,7 @@
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2024/09/10/8/">甲骨文拯救删除引导卷的机器或缩小硬盘</a>
+                    <a href="/2024/09/10/9/">CFnat的使用方法</a>
                 </span>
             </li>
             
@@ -381,7 +371,7 @@
 
                 
                 <li>
-                    <a href="/2024/09/10/5/index.html#sidebar-tags" data-toggle="tab" id="tags-tab">热门标签</a>
+                    <a href="/2024/09/12/12/index.html#sidebar-tags" data-toggle="tab" id="tags-tab">热门标签</a>
                 </li>
                 
                 
